@@ -15,7 +15,13 @@
       </div>
     </div>
     <div class="login" v-if="loginshow">
-
+      <div class="lmout"><div class="loginMess">用户名：</div></div>
+      <input type="text" maxlength="10" placeholder="请输入用户名" v-model="inputname" class="getUM"/>
+      <div class="lmout"><div class="loginMess">头像图片：</div></div>
+      <input type="url" maxlength="-1" placeholder="请输入图片地址(仅支持网络图片)" v-model="inputimg" class="getUM"/>
+      <div class="lb">
+        <button class="loginbutton" @click="submitUM">登录</button>
+      </div>
     </div>
   </div>
 </template>
@@ -26,12 +32,34 @@
       return{
         username:"请登录",
         userimg:"http://m.qpic.cn/psc?/V103RcfH1G3LXq/N6ix9ropXhYRy3eob.4Aq3wyvyh4izLwiBvJ4nSZmXf0IOVLTfVEsGWvm987to78PMh7.OATC3mTpuzDf2sGBA!!/b&bo=yADIAAAAAAADByI!&rf=viewer_4",
-        loginshow:false
+        loginshow:false,
+        inputimg:"",
+        inputname:""
       }
     },
     methods:{
       openlogin:function(){
         this.loginshow=true
+      },
+      getUserMess:function(){
+        var that=this;
+        if(that.$store.state.username){
+          that.username=that.$store.state.username
+        };
+        if(that.$store.state.userimg){
+          that.userimg=that.$store.state.userimg
+        }
+      },
+      submitUM:function(){
+        if(this.inputimg!="" && this.inputname!=""){
+          this.username=this.inputname;
+          this.$store.state.username=this.inputname;
+          this.userimg=this.inputimg;
+          this.$store.state.userimg=this.inputimg;
+          this.loginshow=false;
+        }else{
+          alert("用户信息不能为空")
+        }
       }
     },
     computed:{
@@ -43,7 +71,7 @@
       }
     },
     mounted:function(){
-
+      this.getUserMess();
     }
   }
 </script>
@@ -110,6 +138,34 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+  }
+  .getUM{
+    width: 18.75rem;
+    height: auto;
+    background-color: #95b1b7;
+    color: #160f2e;
+  }
+  .lb{
+    width: 18.75rem;
+    height: auto;
+    text-align: center;
+  }
+  .loginbutton{
+    border-radius: 1.25rem;
+    width: 3.75rem;
+    height: 1.875rem;
+    color: #ececec;
+    background-color: #5de261;
+    margin-top: 2.5rem;
+  }
+  .loginMess{
+    margin-top: 1.875rem;
+    margin-bottom: 0.625rem;
+  }
+  .lmout{
+    text-align: start;
+    width: 18.75rem;
+    height: auto;
   }
 </style>
