@@ -2,12 +2,14 @@
   <div class="outest" :style="{minHeight: windowheight+'px', width: windowwidth+'px'}">
     <page-head></page-head>
     <main-nav></main-nav>
+    <main-cont></main-cont>
   </div>
 </template>
 
 <script>
   import pageHead from '../../components/pageHead/pageHead.vue'
   import mainNav from '../../components/mainNav/mainNav.vue'
+  import mainCont from '../../components/maincont/maincont.vue'
 
   export default{
     data(){
@@ -20,7 +22,8 @@
     },
     components:{
       pageHead,
-      mainNav
+      mainNav,
+      mainCont
     },
     computed:{
       windowheight:function(){   /* 获取视窗高度 */
@@ -44,8 +47,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("http://m.qpic.cn/psc?/V103RcfH1G3LXq/N6ix9ropXhYRy3eob.4Aq6JHbPz*XFh8JZTxjLGrnNwSp6Xddg2Tvc6YH02A2mGJoCNXC9zv*r20Ho8x9EkTbA!!/mnull&bo=UQY4BAAAAAARB1s!&rf=photolist&t=5");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
 </style>
