@@ -42,7 +42,6 @@
     margin-top: 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     border-radius: 6.25rem 6.25rem 0 0;
   }
   .titletxt{
@@ -50,15 +49,18 @@
     font-weight: 650;
     color: rgba(38, 130, 200, 0.8);
     font-style: italic;
+    margin-left: 1%;
   }
   .mylogo{
     width: 6.25rem;
     height: 5rem;
+    margin-left: 10%;
   }
   .user{
     display: flex;
     align-items: flex-end;
     width: auto;
+    margin-left: 40%;
   }
   .user img{
     width: 5rem;
