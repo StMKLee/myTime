@@ -1,27 +1,27 @@
 <template>
   <div class="mNout" :style="{width:windowwidth-70+'px'}">
     <div class="mNin">
-      <div class="navtxt" id="navitem" @mouseover="gamexialashow">GAME</div>
+      <div class="navtxt" id="navitem" @mouseenter="gamexialashow">GAME</div>
       <div class="xiala" :style="{top:gxialaHeight+'px', left:gxialawidth+'px'}" v-show="gameshow" @mouseleave="gamexialahide">
         <transition name="xldh">
-          <div class="xialaitem" v-show="gxialaitemshow">
-            1
+          <div class="xialaitem" v-show="gxialaitemshow" v-for="(item,index) in gitems" :key="index" @click="ggotoroute(index)">
+            {{item.txt}}
           </div>
         </transition>
       </div>
-      <div class="navtxt" @mouseover="pxialashow">PRACTICAL</div>
+      <div class="navtxt" @mouseenter="pxialashow">PRACTICAL</div>
       <div class="xiala" :style="{top:pxialaHeight+'px', left:pxialawidth+'px'}" v-show="pshow" @mouseleave="pxialahide">
         <transition name="xldh">
-          <div class="xialaitem" v-show="pxialaitemshow">
-            1
+          <div class="xialaitem" v-show="pxialaitemshow" v-for="(item,index) in pitems" :key="index" @click="pgotoroute(index)">
+            {{item.txt}}
           </div>
         </transition>
       </div>
-      <div class="navtxt" @mouseover="funxialashow">FUN</div>
+      <div class="navtxt" @mouseenter="funxialashow">FUN</div>
       <div class="xiala" :style="{top:fxialaHeight+'px', left:fxialawidth+'px'}" v-show="funshow" @mouseleave="funxialahide">
         <transition name="xldh">
-          <div class="xialaitem" v-show="fxialaitemshow">
-            1
+          <div class="xialaitem" v-show="fxialaitemshow" v-for="(item,index) in fitems" :key="index" @click="fgotoroute(index)">
+            {{item.txt}}
           </div>
         </transition>
       </div>
@@ -44,18 +44,36 @@
         pshow:false,
         gxialaitemshow:false,
         pxialaitemshow:false,
-        fxialaitemshow:false
+        fxialaitemshow:false,
+        gitems:[
+          {
+            txt:'2048',
+            routeto:'/2048'
+          }
+        ],
+        pitems:[
+          {
+            txt:'#p',
+            routeto:'#'
+          }
+        ],
+        fitems:[
+          {
+            txt:'#f',
+            routeto:'#'
+          }
+        ]
       }
     },
     methods:{
       funxialashow:function(e){
-        this.fxialawidth=e.clientX-e.offsetX;
-        this.fxialaHeight=e.clientY-e.offsetY;
+        this.fxialawidth=e.clientX-e.offsetX-10;
+        this.fxialaHeight=e.clientY-e.offsetY-10;
         this.funshow=true;
         var that=this;
         setTimeout(function(){
           that.fxialaitemshow=true;
-        },100)
+        },50)
       },
       funxialahide:function(){
         if(this.funshow==true){
@@ -64,13 +82,13 @@
         }
       },
       gamexialashow:function(e){
-        this.gxialawidth=e.clientX-e.offsetX;
-        this.gxialaHeight=e.clientY-e.offsetY;
+        this.gxialawidth=e.clientX-e.offsetX-10;
+        this.gxialaHeight=e.clientY-e.offsetY-10;
         this.gameshow=true;
         var that=this;
         setTimeout(function(){
           that.gxialaitemshow=true;
-        },100)
+        },50)
       },
       gamexialahide:function(){
         if(this.gameshow==true){
@@ -79,19 +97,28 @@
         }
       },
       pxialashow:function(e){
-        this.pxialawidth=e.clientX-e.offsetX;
-        this.pxialaHeight=e.clientY-e.offsetY;
+        this.pxialawidth=e.clientX-e.offsetX-10;
+        this.pxialaHeight=e.clientY-e.offsetY-10;
         this.pshow=true;
         var that=this;
         setTimeout(function(){
           that.pxialaitemshow=true;
-        },100)
+        },50)
       },
       pxialahide:function(){
         if(this.pshow==true){
           this.pshow=false;
           this.pxialaitemshow=false;
         }
+      },
+      ggotoroute:function(e){
+        this.$router.push(this.gitems[e].routeto);
+      },
+      pgotoroute:function(e){
+        
+      },
+      fgotoroute:function(e){
+        
       }
     },
     computed:{
@@ -142,10 +169,12 @@
     width: auto;
     background-image: linear-gradient(to bottom, #2f2f3b, #b4b4de, #2f2f3b);
     padding-top: 1.25rem;
+    border-radius: 0 0 50% 50%;
   }
   .xialaitem{
     color: #313586;
     padding-bottom: 1.25rem;
+    cursor: pointer;
   }
   .xldh-enter-active, .xldh-leave-active{
     transition: all .5s ease;
