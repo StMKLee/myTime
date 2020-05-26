@@ -1,5 +1,5 @@
 <template>
-  <div class="outest" :style="{minHeight: windowheight+'px', width: windowwidth+'px'}">
+  <div class="outest" :style="{minHeight: windowheight+'px', minWidth: windowwidth+'px'}">
     <page-head></page-head>
     <main-nav></main-nav>
     <main-cont></main-cont>
@@ -42,7 +42,7 @@
     padding: 0;
   }
   .outest{
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;

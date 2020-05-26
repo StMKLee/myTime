@@ -35,5 +35,6 @@ export default {
     background-image: url("http://m.qpic.cn/psc?/V103RcfH1G3LXq/N6ix9ropXhYRy3eob.4Aq6JHbPz*XFh8JZTxjLGrnNwSp6Xddg2Tvc6YH02A2mGJoCNXC9zv*r20Ho8x9EkTbA!!/mnull&bo=UQY4BAAAAAARB1s!&rf=photolist&t=5");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow-x: hidden;
   }
 </style>

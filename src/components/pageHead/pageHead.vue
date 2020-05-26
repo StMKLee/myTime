@@ -1,7 +1,7 @@
 <template>
   <div class="pHout" :style="{width:windowwidth-70+'px'}">
     <img src="http://m.qpic.cn/psc?/V103RcfH1G3LXq/N6ix9ropXhYRy3eob.4Aqy6w*nvy4a3BDSQsefXQv2opNnVKDpymXnDcDs2hsDfxOZ9KEjLpeSO2g9FREP21iA!!/mnull&bo=yADIAAAAAAADByI!&rf=photolist&t=5" class="mylogo"/>
-    <div class="titletxt">myTime</div>
+    <div class="titletxt" @click="goindex">myTime</div>
     <div class="user">
       <img src="http://m.qpic.cn/psc?/V103RcfH1G3LXq/N6ix9ropXhYRy3eob.4Aq4s0LToTSTBVJulrGIpPiz5OmYDCwl40ae3EpmM.KjpfZH2lAAqcSu4ghCmOVgWxlg!!/mnull&bo=yADIAAAAAAADByI!&rf=photolist&t=5"/>
       <div class="untxt" @click="openlogin">
@@ -19,7 +19,9 @@
       }
     },
     methods:{
-
+      goindex:function(){
+        this.$router.push('/');
+      }
     },
     computed:{
       windowheight:function(){   /* 获取视窗高度 */
@@ -50,6 +52,7 @@
     color: rgba(38, 130, 200, 0.8);
     font-style: italic;
     margin-left: 1%;
+    cursor: pointer;
   }
   .mylogo{
     width: 6.25rem;
