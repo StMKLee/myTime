@@ -3,15 +3,29 @@
     <page-head></page-head>
     <main-nav></main-nav>
     <main-cont>
-      <div class="outcont">
-        <div class="incont" @mousedown.prevent="sidestart" @mouseup.prevent="sideend">
-          <div v-for="(item, index) in 16" :key="index" class="wangge">
-            　
-          </div>
-          <div class="fangkuai" v-for="(itm, idx) in allarea" :key="idx" :style="{top:itm.tpo+'px', left:itm.lpo+'px'}" v-show="itm.has">
-            <div class="numtxt">
-              {{itm.num}}
+      <div class="allcont">
+        <div class="topcont">
+          <div class="gamename">2048</div>
+          <div class="showscores">
+            <div class="nowscore">
+              score：
             </div>
+            <div class="scorenum1">0</div>
+            <div class="bestscore">
+              best：
+            </div>
+            <div class="scorenum2">0</div>
+          </div>
+        </div>
+        <div class="outcont">
+          <div class="incont" @mousedown.prevent="sidestart" @mouseup.prevent="sideend">
+            <div v-for="(item, index) in 16" :key="index" class="wangge">
+            </div>
+              <div class="fangkuai" v-for="(itm, idx) in allarea" :key="idx" :style="{top:itm.tpo+'px', left:itm.lpo+'px'}" v-show="itm.has">
+                <div class="numtxt">
+                  {{itm.num}}
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -37,112 +51,112 @@
             id:0,
             tpo:0,
             lpo:0,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:1,
             tpo:0,
             lpo:76,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:2,
             tpo:0,
             lpo:151,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:3,
             tpo:0,
             lpo:226,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:4,
             tpo:76,
             lpo:0,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:5,
             tpo:76,
             lpo:76,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:6,
             tpo:76,
             lpo:151,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:7,
             tpo:76,
             lpo:226,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:8,
             tpo:151,
             lpo:0,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:9,
             tpo:151,
             lpo:76,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:10,
             tpo:151,
             lpo:151,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:11,
             tpo:151,
             lpo:226,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:12,
             tpo:226,
             lpo:0,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:13,
             tpo:226,
             lpo:76,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:14,
             tpo:226,
             lpo:151,
-            has:true,
+            has:false,
             num:2
           },
           {
             id:15,
             tpo:226,
             lpo:226,
-            has:true,
+            has:false,
             num:2
           }
         ]
@@ -181,6 +195,24 @@
       },
       totop:function(){
         console.log('top')
+      },
+      getnewfangkuai:function(){
+        var a=Math.random()*15;
+        var b=Math.floor(a);
+        var c=0;   /* 判断是否有至少一个空位,16代表没有 */
+        while(this.allarea[b].has==true){		/* 寻找空的位置 */
+        	if(this.allarea[b].id<15&&c!=16){
+        		b+=1;
+            c=c+1;
+        	}else if(this.allarea[b].id==15&&c!=16){
+        		b=0;
+            c=c+1;
+        	}else if(c==16){
+            break;
+          }
+        };
+        this.allarea[b].num=2;
+        this.allarea[b].has=true;
       }
     },
     components:{
@@ -197,7 +229,11 @@
       }
     },
     mounted() {
-
+      var that=this;
+      that.getnewfangkuai();
+      setTimeout(function(){
+        that.getnewfangkuai();
+      }, 1000)
     }
   }
 </script>
@@ -214,6 +250,13 @@
     flex-direction: column;
     align-items: center;
   }
+  .allcont{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .outcont{
     display: flex;
     justify-content: center;
@@ -224,6 +267,50 @@
     border-radius: 30%;
     background-color: #392f1c;
     margin: 1.875rem;
+  }
+  .topcont{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 3.75rem;
+    height: auto;
+    position: relative;
+  }
+  .gamename{
+    left: 2.5rem;
+    font-size: 3.125rem;
+    font-weight: 900;
+    color: #28acd0;
+    position: absolute;
+  }
+  .nowscore{
+    position: absolute;
+    right: 10rem;
+    font-size: 1.5625rem;
+    font-weight: 500;
+    color: #950d28;
+    margin-top: 1.25rem;
+  }
+  .bestscore{
+    position: absolute;
+    right: 3.125rem;
+    font-size: 1.5625rem;
+    font-weight: 500;
+    color: #950d28;
+    margin-top: 1.25rem;
+  }
+  .scorenum1{
+    position: absolute;
+    font-size: 1.5625rem;
+    color: #F0C102;
+    margin-top: 1.5625rem;
+    right: 9.375rem;
+  }
+  .scorenum2{
+    position: absolute;
+    font-size: 1.5625rem;
+    color: #F0C102;
+    right: 2.5rem;
+    margin-top: 1.5625rem;
   }
   .incont{
     margin: 2.8125rem;
@@ -256,5 +343,11 @@
     color: #c5114a;
     font-size: 1.875rem;
     font-weight: 600;
+  }
+  .v-enter-active, .v-leave-active{
+    transition: all 7.2s;
+  }
+  .v-enter{
+    transform: scale(0.1, 0.1);
   }
 </style>
