@@ -22,7 +22,7 @@
             <div v-for="(item, index) in 16" :key="index" class="wangge">
             </div>
               <div class="fangkuai" v-for="(itm, idx) in allarea" :key="idx" :style="{top:itm.tpo+'px', left:itm.lpo+'px'}" v-show="itm.has">
-                <div class="numtxt">
+                <div class="numtxt" :style="{fontSize:itm.fs+'px'}">
                   {{itm.num}}
                 </div>
               </div>
@@ -52,112 +52,128 @@
             tpo:0,
             lpo:0,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:1,
             tpo:0,
             lpo:76,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:2,
             tpo:0,
             lpo:151,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:3,
             tpo:0,
             lpo:226,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:4,
             tpo:76,
             lpo:0,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:5,
             tpo:76,
             lpo:76,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:6,
             tpo:76,
             lpo:151,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:7,
             tpo:76,
             lpo:226,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:8,
             tpo:151,
             lpo:0,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:9,
             tpo:151,
             lpo:76,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:10,
             tpo:151,
             lpo:151,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:11,
             tpo:151,
             lpo:226,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:12,
             tpo:226,
             lpo:0,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:13,
             tpo:226,
             lpo:76,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:14,
             tpo:226,
             lpo:151,
             has:false,
-            num:2
+            num:2,
+            fs:30
           },
           {
             id:15,
             tpo:226,
             lpo:226,
             has:false,
-            num:2
+            num:2,
+            fs:30
           }
         ]
       }
@@ -185,7 +201,462 @@
         }
       },
       toright:function(){
-        console.log('right')
+        console.log('right');
+        if(this.allarea[3].has==true){
+          if(this.allarea[2].has==true){
+            if(this.allarea[2].num==this.allarea[3].num){
+              this.move(2,3,true);
+              if(this.allarea[0].has==true&&this.allarea[1].has==true){
+                if(this.allarea[0].num==this.allarea[1].num){
+                  this.move(1,2,false);
+                  this.move(0,2,true);
+                }else{
+                  this.move(1,2,false);
+                  this.move(0,1,false);
+                }
+              }else if(this.allarea[0].has==true&&this.allarea[1].has==false){
+                this.move(0,2,false);
+              }else if(this.allarea[1].has==true&&this.allarea[0].has==false){
+                this.move(1,2,false);
+              }
+            }else{
+              if(this.allarea[1].has==true){
+                if(this.allarea[1].num==this.allarea[2].num){
+                  this.move(1,2,true);
+                  if(this.allarea[0].has==true){
+                    this.move(0,1,false);
+                  }
+                }else{
+                  if(this.allarea[0].has==true){
+                    if(this.allarea[0].num==this.allarea[1].num){
+                      this.move(0,1,true);
+                    };
+                  };
+                }
+              }else{
+                if(this.allarea[0].has==true){
+                  if(this.allarea[0].num==this.allarea[2].num){
+                    this.move(0,2,true);
+                  }else{
+                    this.move(0,1,false);
+                  }
+                };
+              }
+            }
+          }else{
+            if(this.allarea[1].has==true){
+              if(this.allarea[1].num==this.allarea[3].num){
+                this.move(1,3,true);
+                if(this.allarea[0].has==true){
+                  this.move(0,2,false);
+                };
+              }else{
+                this.move(1,2,false);
+                if(this.allarea[0].has==true){
+                  if(this.allarea[0].num==this.allarea[2].num){
+                    this.move(0,2,true);
+                  }else{
+                    this.move(0,1,true);
+                  }
+                }
+              }
+            }else{
+              if(this.allarea[0].has==true){
+                if(this.allarea[0].num==this.allarea[3].num){
+                  this.move(0,3,true);
+                }else{
+                  this.move(0,2,false);
+                }
+              };
+            }
+          }
+        }else{
+          if(this.allarea[2].has==true){
+            this.move(2,3,false);
+            if(this.allarea[1].has==true){
+              if(this.allarea[1].num==this.allarea[3].num){
+                this.move(1,3,true);
+                if(this.allarea[0].has==true){
+                  this.move(0,2,false);
+                };
+              }else{
+                this.move(1,2,false);
+                if(this.allarea[0].has==true){
+                  if(this.allarea[0].num==this.allarea[2].num){
+                    this.move(0,2,true);
+                  }else{
+                    this.move(0,1,false);
+                  }
+                };
+              }
+            }else{
+              if(this.allarea[0].has==true){
+                if(this.allarea[0].num==this.allarea[3].num){
+                  this.move(0,3,true);
+                }else{
+                  this.move(0,2,false);
+                }
+              };
+            }
+          }else{
+            if(this.allarea[1].has==true){
+              this.move(1,3,false);
+              if(this.allarea[0].has==true){
+                if(this.allarea[0].num==this.allarea[3].num){
+                  this.move(0,3,true);
+                }else{
+                  this.move(0,2,false);
+                }
+              };
+            }else{
+              if(this.allarea[0].has==true){
+                this.move(0,3,false);
+              }
+            }
+          }
+        };
+
+        if(this.allarea[7].has==true){
+          if(this.allarea[6].has==true){
+            if(this.allarea[6].num==this.allarea[7].num){
+              this.move(6,7,true);
+              if(this.allarea[4].has==true&&this.allarea[5].has==true){
+                if(this.allarea[4].num==this.allarea[5].num){
+                  this.move(5,6,false);
+                  this.move(4,6,true);
+                }else{
+                  this.move(5,6,false);
+                  this.move(4,5,false);
+                }
+              }else if(this.allarea[4].has==true&&this.allarea[5].has==false){
+                this.move(4,6,false);
+              }else if(this.allarea[5].has==true&&this.allarea[4].has==false){
+                this.move(5,6,false);
+              }
+            }else{
+              if(this.allarea[5].has==true){
+                if(this.allarea[5].num==this.allarea[6].num){
+                  this.move(5,6,true);
+                  if(this.allarea[4].has==true){
+                    this.move(4,5,false);
+                  }
+                }else{
+                  if(this.allarea[4].has==true){
+                    if(this.allarea[4].num==this.allarea[5].num){
+                      this.move(4,5,true);
+                    };
+                  };
+                }
+              }else{
+                if(this.allarea[4].has==true){
+                  if(this.allarea[4].num==this.allarea[6].num){
+                    this.move(4,6,true);
+                  }else{
+                    this.move(4,5,false);
+                  }
+                };
+              }
+            }
+          }else{
+            if(this.allarea[5].has==true){
+              if(this.allarea[5].num==this.allarea[7].num){
+                this.move(5,7,true);
+                if(this.allarea[4].has==true){
+                  this.move(4,6,false);
+                };
+              }else{
+                this.move(5,6,false);
+                if(this.allarea[4].has==true){
+                  if(this.allarea[4].num==this.allarea[6].num){
+                    this.move(4,6,true);
+                  }else{
+                    this.move(4,5,true);
+                  }
+                }
+              }
+            }else{
+              if(this.allarea[4].has==true){
+                if(this.allarea[4].num==this.allarea[7].num){
+                  this.move(4,7,true);
+                }else{
+                  this.move(4,6,false);
+                }
+              };
+            }
+          }
+        }else{
+          if(this.allarea[6].has==true){
+            this.move(6,7,false);
+            if(this.allarea[5].has==true){
+              if(this.allarea[5].num==this.allarea[7].num){
+                this.move(5,7,true);
+                if(this.allarea[4].has==true){
+                  this.move(4,6,false);
+                };
+              }else{
+                this.move(5,6,false);
+                if(this.allarea[4].has==true){
+                  if(this.allarea[4].num==this.allarea[6].num){
+                    this.move(4,6,true);
+                  }else{
+                    this.move(4,5,false);
+                  }
+                };
+              }
+            }else{
+              if(this.allarea[4].has==true){
+                if(this.allarea[4].num==this.allarea[7].num){
+                  this.move(4,7,true);
+                }else{
+                  this.move(4,6,false);
+                }
+              };
+            }
+          }else{
+            if(this.allarea[5].has==true){
+              this.move(5,7,false);
+              if(this.allarea[4].has==true){
+                if(this.allarea[4].num==this.allarea[7].num){
+                  this.move(4,7,true);
+                }else{
+                  this.move(4,6,false);
+                }
+              };
+            }else{
+              if(this.allarea[4].has==true){
+                this.move(4,7,false);
+              }
+            }
+          }
+        };
+
+        if(this.allarea[11].has==true){
+          if(this.allarea[10].has==true){
+            if(this.allarea[10].num==this.allarea[11].num){
+              this.move(10,11,true);
+              if(this.allarea[8].has==true&&this.allarea[9].has==true){
+                if(this.allarea[8].num==this.allarea[9].num){
+                  this.move(9,10,false);
+                  this.move(8,10,true);
+                }else{
+                  this.move(9,10,false);
+                  this.move(8,9,false);
+                }
+              }else if(this.allarea[8].has==true&&this.allarea[9].has==false){
+                this.move(8,10,false);
+              }else if(this.allarea[9].has==true&&this.allarea[8].has==false){
+                this.move(9,10,false);
+              }
+            }else{
+              if(this.allarea[9].has==true){
+                if(this.allarea[9].num==this.allarea[10].num){
+                  this.move(9,10,true);
+                  if(this.allarea[8].has==true){
+                    this.move(8,9,false);
+                  }
+                }else{
+                  if(this.allarea[8].has==true){
+                    if(this.allarea[8].num==this.allarea[9].num){
+                      this.move(8,9,true);
+                    };
+                  };
+                }
+              }else{
+                if(this.allarea[8].has==true){
+                  if(this.allarea[8].num==this.allarea[90].num){
+                    this.move(8,10,true);
+                  }else{
+                    this.move(8,9,false);
+                  }
+                };
+              }
+            }
+          }else{
+            if(this.allarea[9].has==true){
+              if(this.allarea[9].num==this.allarea[11].num){
+                this.move(9,11,true);
+                if(this.allarea[8].has==true){
+                  this.move(8,10,false);
+                };
+              }else{
+                this.move(9,10,false);
+                if(this.allarea[8].has==true){
+                  if(this.allarea[8].num==this.allarea[10].num){
+                    this.move(8,10,true);
+                  }else{
+                    this.move(8,9,true);
+                  }
+                }
+              }
+            }else{
+              if(this.allarea[8].has==true){
+                if(this.allarea[8].num==this.allarea[11].num){
+                  this.move(8,11,true);
+                }else{
+                  this.move(8,10,false);
+                }
+              };
+            }
+          }
+        }else{
+          if(this.allarea[10].has==true){
+            this.move(10,11,false);
+            if(this.allarea[9].has==true){
+              if(this.allarea[9].num==this.allarea[11].num){
+                this.move(9,11,true);
+                if(this.allarea[8].has==true){
+                  this.move(8,10,false);
+                };
+              }else{
+                this.move(9,10,false);
+                if(this.allarea[8].has==true){
+                  if(this.allarea[8].num==this.allarea[10].num){
+                    this.move(8,10,true);
+                  }else{
+                    this.move(8,9,false);
+                  }
+                };
+              }
+            }else{
+              if(this.allarea[8].has==true){
+                if(this.allarea[8].num==this.allarea[11].num){
+                  this.move(8,11,true);
+                }else{
+                  this.move(8,10,false);
+                }
+              };
+            }
+          }else{
+            if(this.allarea[9].has==true){
+              this.move(9,11,false);
+              if(this.allarea[8].has==true){
+                if(this.allarea[8].num==this.allarea[11].num){
+                  this.move(8,11,true);
+                }else{
+                  this.move(8,10,false);
+                }
+              };
+            }else{
+              if(this.allarea[8].has==true){
+                this.move(8,11,false);
+              }
+            }
+          }
+        };
+
+        if(this.allarea[15].has==true){
+          if(this.allarea[14].has==true){
+            if(this.allarea[14].num==this.allarea[15].num){
+              this.move(14,15,true);
+              if(this.allarea[12].has==true&&this.allarea[13].has==true){
+                if(this.allarea[12].num==this.allarea[13].num){
+                  this.move(13,14,false);
+                  this.move(12,14,true);
+                }else{
+                  this.move(13,14,false);
+                  this.move(12,13,false);
+                }
+              }else if(this.allarea[12].has==true&&this.allarea[13].has==false){
+                this.move(12,14,false);
+              }else if(this.allarea[13].has==true&&this.allarea[12].has==false){
+                this.move(13,14,false);
+              }
+            }else{
+              if(this.allarea[13].has==true){
+                if(this.allarea[13].num==this.allarea[14].num){
+                  this.move(13,14,true);
+                  if(this.allarea[12].has==true){
+                    this.move(12,13,false);
+                  }
+                }else{
+                  if(this.allarea[12].has==true){
+                    if(this.allarea[12].num==this.allarea[13].num){
+                      this.move(12,13,true);
+                    };
+                  };
+                }
+              }else{
+                if(this.allarea[12].has==true){
+                  if(this.allarea[12].num==this.allarea[14].num){
+                    this.move(12,14,true);
+                  }else{
+                    this.move(12,13,false);
+                  }
+                };
+              }
+            }
+          }else{
+            if(this.allarea[13].has==true){
+              if(this.allarea[13].num==this.allarea[15].num){
+                this.move(13,15,true);
+                if(this.allarea[12].has==true){
+                  this.move(12,14,false);
+                };
+              }else{
+                this.move(13,14,false);
+                if(this.allarea[12].has==true){
+                  if(this.allarea[12].num==this.allarea[14].num){
+                    this.move(12,14,true);
+                  }else{
+                    this.move(12,13,true);
+                  }
+                }
+              }
+            }else{
+              if(this.allarea[12].has==true){
+                if(this.allarea[12].num==this.allarea[15].num){
+                  this.move(12,15,true);
+                }else{
+                  this.move(12,14,false);
+                }
+              };
+            }
+          }
+        }else{
+          if(this.allarea[14].has==true){
+            this.move(14,15,false);
+            if(this.allarea[13].has==true){
+              if(this.allarea[13].num==this.allarea[15].num){
+                this.move(13,15,true);
+                if(this.allarea[12].has==true){
+                  this.move(12,14,false);
+                };
+              }else{
+                this.move(13,14,false);
+                if(this.allarea[12].has==true){
+                  if(this.allarea[12].num==this.allarea[14].num){
+                    this.move(12,14,true);
+                  }else{
+                    this.move(12,13,false);
+                  }
+                };
+              }
+            }else{
+              if(this.allarea[12].has==true){
+                if(this.allarea[12].num==this.allarea[15].num){
+                  this.move(12,15,true);
+                }else{
+                  this.move(12,14,false);
+                }
+              };
+            }
+          }else{
+            if(this.allarea[13].has==true){
+              this.move(13,15,false);
+              if(this.allarea[12].has==true){
+                if(this.allarea[12].num==this.allarea[15].num){
+                  this.move(12,15,true);
+                }else{
+                  this.move(12,14,false);
+                }
+              };
+            }else{
+              if(this.allarea[12].has==true){
+                this.move(12,15,false);
+              }
+            }
+          }
+        };
       },
       toleft:function(){
         console.log('left')
@@ -211,8 +682,352 @@
             break;
           }
         };
-        this.allarea[b].num=2;
-        this.allarea[b].has=true;
+        if(c!=16){
+          this.allarea[b].num=2;
+          this.allarea[b].has=true;
+        }
+      },
+      move:function(start,end,add){
+        var that=this;
+        if(start==0&&end==1){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==1&&end==0){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==0&&end==2){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==2&&end==0){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==0&&end==3){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==3&&end==0){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==1&&end==2){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==2&&end==1){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==1&&end==3){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==3&&end==1){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==2&&end==3){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==3&&end==2){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+
+        if(start==4&&end==5){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==5&&end==4){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==4&&end==6){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==6&&end==4){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==4&&end==7){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==7&&end==4){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==5&&end==6){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==6&&end==5){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==5&&end==7){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==7&&end==5){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==6&&end==7){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==7&&end==6){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+
+        if(start==8&&end==9){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==9&&end==8){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==8&&end==10){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==10&&end==8){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==8&&end==11){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==11&&end==8){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==9&&end==10){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==10&&end==9){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==9&&end==11){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==11&&end==9){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==10&&end==11){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==11&&end==10){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+
+        if(start==12&&end==13){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==13&&end==12){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==12&&end==14){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==14&&end==12){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==12&&end==15){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==15&&end==12){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==13&&end==14){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==14&&end==13){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==13&&end==15){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==15&&end==13){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==14&&end==15){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
+        if(start==15&&end==14){
+          if(add==false){
+
+          }else if(add==true){
+
+          }
+        };
       }
     },
     components:{
@@ -231,9 +1046,7 @@
     mounted() {
       var that=this;
       that.getnewfangkuai();
-      setTimeout(function(){
-        that.getnewfangkuai();
-      }, 1000)
+      that.getnewfangkuai();
     }
   }
 </script>
@@ -341,7 +1154,6 @@
   }
   .numtxt{
     color: #c5114a;
-    font-size: 1.875rem;
     font-weight: 600;
   }
   .v-enter-active, .v-leave-active{
