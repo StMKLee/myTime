@@ -11,6 +11,7 @@
               score：
             </div>
             <div class="scorenum1">{{score}}</div>
+            <div class="fgf">|</div>
             <div class="bestscore">
               best：
             </div>
@@ -209,40 +210,41 @@
       },
       toright:function(){
         console.log('right');
-        if(this.allarea[3].has==true){
-          if(this.allarea[2].has==true){
-            if(this.allarea[2].num==this.allarea[3].num){
+        if(this.allarea[3].has===true){
+          if(this.allarea[2].has===true){
+            if(this.allarea[2].num===this.allarea[3].num){
               this.move(2,3,true);
-              if(this.allarea[0].has==true&&this.allarea[1].has==true){
-                if(this.allarea[0].num==this.allarea[1].num){
-                  this.move(1,2,false);
-                  this.move(0,2,true);
-                }else{
-                  this.move(1,2,false);
-                  this.move(0,1,false);
-                }
-              }else if(this.allarea[0].has==true&&this.allarea[1].has==false){
-                this.move(0,2,false);
-              }else if(this.allarea[1].has==true&&this.allarea[0].has==false){
+              if(this.allarea[1].has===true){
                 this.move(1,2,false);
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[2].num){
+                    this.move(0,2,true);
+                  }else{
+                    this.move(0,1,false);
+                  }
+                }
+              }else{
+                if(this.allarea[0].has===true){
+                  this.move(0,2,false);
+                }
               }
             }else{
-              if(this.allarea[1].has==true){
-                if(this.allarea[1].num==this.allarea[2].num){
+              if(this.allarea[1].has===true){
+                if(this.allarea[1].num===this.allarea[2].num){
                   this.move(1,2,true);
-                  if(this.allarea[0].has==true){
+                  if(this.allarea[0].has===true){
                     this.move(0,1,false);
                   }
                 }else{
-                  if(this.allarea[0].has==true){
-                    if(this.allarea[0].num==this.allarea[1].num){
+                  if(this.allarea[0].has===true){
+                    if(this.allarea[0].num===this.allarea[1].num){
                       this.move(0,1,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[2].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[2].num){
                     this.move(0,2,true);
                   }else{
                     this.move(0,1,false);
@@ -251,25 +253,25 @@
               }
             }
           }else{
-            if(this.allarea[1].has==true){
-              if(this.allarea[1].num==this.allarea[3].num){
+            if(this.allarea[1].has===true){
+              if(this.allarea[1].num===this.allarea[3].num){
                 this.move(1,3,true);
-                if(this.allarea[0].has==true){
+                if(this.allarea[0].has===true){
                   this.move(0,2,false);
                 };
               }else{
                 this.move(1,2,false);
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[2].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[2].num){
                     this.move(0,2,true);
                   }else{
-                    this.move(0,1,true);
+                    this.move(0,1,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[3].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[3].num){
                   this.move(0,3,true);
                 }else{
                   this.move(0,2,false);
@@ -278,18 +280,18 @@
             }
           }
         }else{
-          if(this.allarea[2].has==true){
+          if(this.allarea[2].has===true){
             this.move(2,3,false);
-            if(this.allarea[1].has==true){
-              if(this.allarea[1].num==this.allarea[3].num){
+            if(this.allarea[1].has===true){
+              if(this.allarea[1].num===this.allarea[3].num){
                 this.move(1,3,true);
-                if(this.allarea[0].has==true){
+                if(this.allarea[0].has===true){
                   this.move(0,2,false);
                 };
               }else{
                 this.move(1,2,false);
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[2].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[2].num){
                     this.move(0,2,true);
                   }else{
                     this.move(0,1,false);
@@ -297,8 +299,8 @@
                 };
               }
             }else{
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[3].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[3].num){
                   this.move(0,3,true);
                 }else{
                   this.move(0,2,false);
@@ -306,57 +308,58 @@
               };
             }
           }else{
-            if(this.allarea[1].has==true){
+            if(this.allarea[1].has===true){
               this.move(1,3,false);
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[3].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[3].num){
                   this.move(0,3,true);
                 }else{
                   this.move(0,2,false);
                 }
               };
             }else{
-              if(this.allarea[0].has==true){
+              if(this.allarea[0].has===true){
                 this.move(0,3,false);
               }
             }
           }
         };
 
-        if(this.allarea[7].has==true){
-          if(this.allarea[6].has==true){
-            if(this.allarea[6].num==this.allarea[7].num){
+        if(this.allarea[7].has===true){
+          if(this.allarea[6].has===true){
+            if(this.allarea[6].num===this.allarea[7].num){
               this.move(6,7,true);
-              if(this.allarea[4].has==true&&this.allarea[5].has==true){
-                if(this.allarea[4].num==this.allarea[5].num){
-                  this.move(5,6,false);
-                  this.move(4,6,true);
-                }else{
-                  this.move(5,6,false);
-                  this.move(4,5,false);
-                }
-              }else if(this.allarea[4].has==true&&this.allarea[5].has==false){
-                this.move(4,6,false);
-              }else if(this.allarea[5].has==true&&this.allarea[4].has==false){
+              if(this.allarea[5].has===true){
                 this.move(5,6,false);
+                if(this.allarea[4].has===true){
+                  if(this.allarea[4].num===this.allarea[6].num){
+                    this.move(4,6,true);
+                  }else{
+                    this.move(4,5,false);
+                  }
+                }
+              }else{
+                if(this.allarea[4].has===true){
+                  this.move(4,6,false);
+                }
               }
             }else{
-              if(this.allarea[5].has==true){
-                if(this.allarea[5].num==this.allarea[6].num){
+              if(this.allarea[5].has===true){
+                if(this.allarea[5].num===this.allarea[6].num){
                   this.move(5,6,true);
-                  if(this.allarea[4].has==true){
+                  if(this.allarea[4].has===true){
                     this.move(4,5,false);
                   }
                 }else{
-                  if(this.allarea[4].has==true){
-                    if(this.allarea[4].num==this.allarea[5].num){
+                  if(this.allarea[4].has===true){
+                    if(this.allarea[4].num===this.allarea[5].num){
                       this.move(4,5,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[4].has==true){
-                  if(this.allarea[4].num==this.allarea[6].num){
+                if(this.allarea[4].has===true){
+                  if(this.allarea[4].num===this.allarea[6].num){
                     this.move(4,6,true);
                   }else{
                     this.move(4,5,false);
@@ -365,25 +368,25 @@
               }
             }
           }else{
-            if(this.allarea[5].has==true){
-              if(this.allarea[5].num==this.allarea[7].num){
+            if(this.allarea[5].has===true){
+              if(this.allarea[5].num===this.allarea[7].num){
                 this.move(5,7,true);
-                if(this.allarea[4].has==true){
+                if(this.allarea[4].has===true){
                   this.move(4,6,false);
                 };
               }else{
                 this.move(5,6,false);
-                if(this.allarea[4].has==true){
-                  if(this.allarea[4].num==this.allarea[6].num){
+                if(this.allarea[4].has===true){
+                  if(this.allarea[4].num===this.allarea[6].num){
                     this.move(4,6,true);
                   }else{
-                    this.move(4,5,true);
+                    this.move(4,5,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[4].has==true){
-                if(this.allarea[4].num==this.allarea[7].num){
+              if(this.allarea[4].has===true){
+                if(this.allarea[4].num===this.allarea[7].num){
                   this.move(4,7,true);
                 }else{
                   this.move(4,6,false);
@@ -392,18 +395,18 @@
             }
           }
         }else{
-          if(this.allarea[6].has==true){
+          if(this.allarea[6].has===true){
             this.move(6,7,false);
-            if(this.allarea[5].has==true){
-              if(this.allarea[5].num==this.allarea[7].num){
+            if(this.allarea[5].has===true){
+              if(this.allarea[5].num===this.allarea[7].num){
                 this.move(5,7,true);
-                if(this.allarea[4].has==true){
+                if(this.allarea[4].has===true){
                   this.move(4,6,false);
                 };
               }else{
                 this.move(5,6,false);
-                if(this.allarea[4].has==true){
-                  if(this.allarea[4].num==this.allarea[6].num){
+                if(this.allarea[4].has===true){
+                  if(this.allarea[4].num===this.allarea[6].num){
                     this.move(4,6,true);
                   }else{
                     this.move(4,5,false);
@@ -411,8 +414,8 @@
                 };
               }
             }else{
-              if(this.allarea[4].has==true){
-                if(this.allarea[4].num==this.allarea[7].num){
+              if(this.allarea[4].has===true){
+                if(this.allarea[4].num===this.allarea[7].num){
                   this.move(4,7,true);
                 }else{
                   this.move(4,6,false);
@@ -420,57 +423,58 @@
               };
             }
           }else{
-            if(this.allarea[5].has==true){
+            if(this.allarea[5].has===true){
               this.move(5,7,false);
-              if(this.allarea[4].has==true){
-                if(this.allarea[4].num==this.allarea[7].num){
+              if(this.allarea[4].has===true){
+                if(this.allarea[4].num===this.allarea[7].num){
                   this.move(4,7,true);
                 }else{
                   this.move(4,6,false);
                 }
               };
             }else{
-              if(this.allarea[4].has==true){
+              if(this.allarea[4].has===true){
                 this.move(4,7,false);
               }
             }
           }
         };
 
-        if(this.allarea[11].has==true){
-          if(this.allarea[10].has==true){
-            if(this.allarea[10].num==this.allarea[11].num){
+        if(this.allarea[11].has===true){
+          if(this.allarea[10].has===true){
+            if(this.allarea[10].num===this.allarea[11].num){
               this.move(10,11,true);
-              if(this.allarea[8].has==true&&this.allarea[9].has==true){
-                if(this.allarea[8].num==this.allarea[9].num){
-                  this.move(9,10,false);
-                  this.move(8,10,true);
-                }else{
-                  this.move(9,10,false);
-                  this.move(8,9,false);
-                }
-              }else if(this.allarea[8].has==true&&this.allarea[9].has==false){
-                this.move(8,10,false);
-              }else if(this.allarea[9].has==true&&this.allarea[8].has==false){
+              if(this.allarea[9].has===true){
                 this.move(9,10,false);
+                if(this.allarea[8].has===true){
+                  if(this.allarea[8].num===this.allarea[10].num){
+                    this.move(8,10,true);
+                  }else{
+                    this.move(8,9,false);
+                  }
+                }
+              }else{
+                if(this.allarea[8].has===true){
+                  this.move(8,10,false);
+                }
               }
             }else{
-              if(this.allarea[9].has==true){
-                if(this.allarea[9].num==this.allarea[10].num){
+              if(this.allarea[9].has===true){
+                if(this.allarea[9].num===this.allarea[10].num){
                   this.move(9,10,true);
-                  if(this.allarea[8].has==true){
+                  if(this.allarea[8].has===true){
                     this.move(8,9,false);
                   }
                 }else{
-                  if(this.allarea[8].has==true){
-                    if(this.allarea[8].num==this.allarea[9].num){
+                  if(this.allarea[8].has===true){
+                    if(this.allarea[8].num===this.allarea[9].num){
                       this.move(8,9,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[8].has==true){
-                  if(this.allarea[8].num==this.allarea[10].num){
+                if(this.allarea[8].has===true){
+                  if(this.allarea[8].num===this.allarea[10].num){
                     this.move(8,10,true);
                   }else{
                     this.move(8,9,false);
@@ -479,25 +483,25 @@
               }
             }
           }else{
-            if(this.allarea[9].has==true){
-              if(this.allarea[9].num==this.allarea[11].num){
+            if(this.allarea[9].has===true){
+              if(this.allarea[9].num===this.allarea[11].num){
                 this.move(9,11,true);
-                if(this.allarea[8].has==true){
+                if(this.allarea[8].has===true){
                   this.move(8,10,false);
                 };
               }else{
                 this.move(9,10,false);
-                if(this.allarea[8].has==true){
-                  if(this.allarea[8].num==this.allarea[10].num){
+                if(this.allarea[8].has===true){
+                  if(this.allarea[8].num===this.allarea[10].num){
                     this.move(8,10,true);
                   }else{
-                    this.move(8,9,true);
+                    this.move(8,9,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[8].has==true){
-                if(this.allarea[8].num==this.allarea[11].num){
+              if(this.allarea[8].has===true){
+                if(this.allarea[8].num===this.allarea[11].num){
                   this.move(8,11,true);
                 }else{
                   this.move(8,10,false);
@@ -506,18 +510,18 @@
             }
           }
         }else{
-          if(this.allarea[10].has==true){
+          if(this.allarea[10].has===true){
             this.move(10,11,false);
-            if(this.allarea[9].has==true){
-              if(this.allarea[9].num==this.allarea[11].num){
+            if(this.allarea[9].has===true){
+              if(this.allarea[9].num===this.allarea[11].num){
                 this.move(9,11,true);
-                if(this.allarea[8].has==true){
+                if(this.allarea[8].has===true){
                   this.move(8,10,false);
                 };
               }else{
                 this.move(9,10,false);
-                if(this.allarea[8].has==true){
-                  if(this.allarea[8].num==this.allarea[10].num){
+                if(this.allarea[8].has===true){
+                  if(this.allarea[8].num===this.allarea[10].num){
                     this.move(8,10,true);
                   }else{
                     this.move(8,9,false);
@@ -525,8 +529,8 @@
                 };
               }
             }else{
-              if(this.allarea[8].has==true){
-                if(this.allarea[8].num==this.allarea[11].num){
+              if(this.allarea[8].has===true){
+                if(this.allarea[8].num===this.allarea[11].num){
                   this.move(8,11,true);
                 }else{
                   this.move(8,10,false);
@@ -534,57 +538,58 @@
               };
             }
           }else{
-            if(this.allarea[9].has==true){
+            if(this.allarea[9].has===true){
               this.move(9,11,false);
-              if(this.allarea[8].has==true){
-                if(this.allarea[8].num==this.allarea[11].num){
+              if(this.allarea[8].has===true){
+                if(this.allarea[8].num===this.allarea[11].num){
                   this.move(8,11,true);
                 }else{
                   this.move(8,10,false);
                 }
               };
             }else{
-              if(this.allarea[8].has==true){
+              if(this.allarea[8].has===true){
                 this.move(8,11,false);
               }
             }
           }
         };
 
-        if(this.allarea[15].has==true){
-          if(this.allarea[14].has==true){
-            if(this.allarea[14].num==this.allarea[15].num){
+        if(this.allarea[15].has===true){
+          if(this.allarea[14].has===true){
+            if(this.allarea[14].num===this.allarea[15].num){
               this.move(14,15,true);
-              if(this.allarea[12].has==true&&this.allarea[13].has==true){
-                if(this.allarea[12].num==this.allarea[13].num){
-                  this.move(13,14,false);
-                  this.move(12,14,true);
-                }else{
-                  this.move(13,14,false);
-                  this.move(12,13,false);
-                }
-              }else if(this.allarea[12].has==true&&this.allarea[13].has==false){
-                this.move(12,14,false);
-              }else if(this.allarea[13].has==true&&this.allarea[12].has==false){
+              if(this.allarea[13].has===true){
                 this.move(13,14,false);
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[14].num){
+                    this.move(12,14,true);
+                  }else{
+                    this.move(12,13,false);
+                  }
+                }
+              }else{
+                if(this.allarea[12].has===true){
+                  this.move(12,14,false);
+                }
               }
             }else{
-              if(this.allarea[13].has==true){
-                if(this.allarea[13].num==this.allarea[14].num){
+              if(this.allarea[13].has===true){
+                if(this.allarea[13].num===this.allarea[14].num){
                   this.move(13,14,true);
-                  if(this.allarea[12].has==true){
+                  if(this.allarea[12].has===true){
                     this.move(12,13,false);
                   }
                 }else{
-                  if(this.allarea[12].has==true){
-                    if(this.allarea[12].num==this.allarea[13].num){
+                  if(this.allarea[12].has===true){
+                    if(this.allarea[12].num===this.allarea[13].num){
                       this.move(12,13,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[14].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[14].num){
                     this.move(12,14,true);
                   }else{
                     this.move(12,13,false);
@@ -593,25 +598,25 @@
               }
             }
           }else{
-            if(this.allarea[13].has==true){
-              if(this.allarea[13].num==this.allarea[15].num){
+            if(this.allarea[13].has===true){
+              if(this.allarea[13].num===this.allarea[15].num){
                 this.move(13,15,true);
-                if(this.allarea[12].has==true){
+                if(this.allarea[12].has===true){
                   this.move(12,14,false);
                 };
               }else{
                 this.move(13,14,false);
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[14].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[14].num){
                     this.move(12,14,true);
                   }else{
-                    this.move(12,13,true);
+                    this.move(12,13,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[15].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[15].num){
                   this.move(12,15,true);
                 }else{
                   this.move(12,14,false);
@@ -620,18 +625,18 @@
             }
           }
         }else{
-          if(this.allarea[14].has==true){
+          if(this.allarea[14].has===true){
             this.move(14,15,false);
-            if(this.allarea[13].has==true){
-              if(this.allarea[13].num==this.allarea[15].num){
+            if(this.allarea[13].has===true){
+              if(this.allarea[13].num===this.allarea[15].num){
                 this.move(13,15,true);
-                if(this.allarea[12].has==true){
+                if(this.allarea[12].has===true){
                   this.move(12,14,false);
                 };
               }else{
                 this.move(13,14,false);
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[14].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[14].num){
                     this.move(12,14,true);
                   }else{
                     this.move(12,13,false);
@@ -639,8 +644,8 @@
                 };
               }
             }else{
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[15].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[15].num){
                   this.move(12,15,true);
                 }else{
                   this.move(12,14,false);
@@ -648,60 +653,64 @@
               };
             }
           }else{
-            if(this.allarea[13].has==true){
+            if(this.allarea[13].has===true){
               this.move(13,15,false);
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[15].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[15].num){
                   this.move(12,15,true);
                 }else{
                   this.move(12,14,false);
                 }
               };
             }else{
-              if(this.allarea[12].has==true){
+              if(this.allarea[12].has===true){
                 this.move(12,15,false);
               }
             }
           }
         };
-        this.getnewfangkuai();
+        var that=this;
+        setTimeout(function(){
+          that.getnewfangkuai();
+        },100);
       },
       toleft:function(){
         console.log('left');
-        if(this.allarea[0].has==true){
-          if(this.allarea[1].has==true){
-            if(this.allarea[1].num==this.allarea[0].num){
+        if(this.allarea[0].has===true){
+          if(this.allarea[1].has===true){
+            if(this.allarea[1].num===this.allarea[0].num){
               this.move(1,0,true);
-              if(this.allarea[3].has==true&&this.allarea[2].has==true){
-                if(this.allarea[3].num==this.allarea[2].num){
-                  this.move(2,1,false);
-                  this.move(3,1,true);
-                }else{
-                  this.move(2,1,false);
-                  this.move(3,2,false);
-                }
-              }else if(this.allarea[3].has==true&&this.allarea[2].has==false){
-                this.move(3,1,false);
-              }else if(this.allarea[2].has==true&&this.allarea[3].has==false){
+              if(this.allarea[2].has===true){
                 this.move(2,1,false);
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[1].num){
+                    this.move(3,1,true);
+                  }else{
+                    this.move(3,2,false);
+                  }
+                }
+              }else{
+                if(this.allarea[3].has===true){
+                  this.move(3,1,false);
+                }
               }
             }else{
-              if(this.allarea[2].has==true){
-                if(this.allarea[2].num==this.allarea[1].num){
+              if(this.allarea[2].has===true){
+                if(this.allarea[2].num===this.allarea[1].num){
                   this.move(2,1,true);
-                  if(this.allarea[3].has==true){
+                  if(this.allarea[3].has===true){
                     this.move(3,2,false);
                   }
                 }else{
-                  if(this.allarea[3].has==true){
-                    if(this.allarea[3].num==this.allarea[2].num){
+                  if(this.allarea[3].has===true){
+                    if(this.allarea[3].num===this.allarea[2].num){
                       this.move(3,2,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[1].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[1].num){
                     this.move(3,1,true);
                   }else{
                     this.move(3,2,false);
@@ -710,25 +719,25 @@
               }
             }
           }else{
-            if(this.allarea[2].has==true){
-              if(this.allarea[2].num==this.allarea[0].num){
+            if(this.allarea[2].has===true){
+              if(this.allarea[2].num===this.allarea[0].num){
                 this.move(2,0,true);
-                if(this.allarea[3].has==true){
+                if(this.allarea[3].has===true){
                   this.move(3,1,false);
                 };
               }else{
                 this.move(2,1,false);
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[1].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[1].num){
                     this.move(3,1,true);
                   }else{
-                    this.move(3,2,true);
+                    this.move(3,2,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[0].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[0].num){
                   this.move(3,0,true);
                 }else{
                   this.move(3,1,false);
@@ -737,18 +746,18 @@
             }
           }
         }else{
-          if(this.allarea[1].has==true){
+          if(this.allarea[1].has===true){
             this.move(1,0,false);
-            if(this.allarea[2].has==true){
-              if(this.allarea[2].num==this.allarea[0].num){
+            if(this.allarea[2].has===true){
+              if(this.allarea[2].num===this.allarea[0].num){
                 this.move(2,0,true);
-                if(this.allarea[3].has==true){
+                if(this.allarea[3].has===true){
                   this.move(3,1,false);
                 };
               }else{
                 this.move(2,1,false);
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[1].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[1].num){
                     this.move(3,1,true);
                   }else{
                     this.move(3,2,false);
@@ -756,8 +765,8 @@
                 };
               }
             }else{
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[0].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[0].num){
                   this.move(3,0,true);
                 }else{
                   this.move(3,1,false);
@@ -765,57 +774,58 @@
               };
             }
           }else{
-            if(this.allarea[2].has==true){
+            if(this.allarea[2].has===true){
               this.move(2,0,false);
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[0].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[0].num){
                   this.move(3,0,true);
                 }else{
                   this.move(3,1,false);
                 }
               };
             }else{
-              if(this.allarea[3].has==true){
+              if(this.allarea[3].has===true){
                 this.move(3,0,false);
               }
             }
           }
         };
 
-        if(this.allarea[4].has==true){
-          if(this.allarea[5].has==true){
-            if(this.allarea[5].num==this.allarea[4].num){
+        if(this.allarea[4].has===true){
+          if(this.allarea[5].has===true){
+            if(this.allarea[5].num===this.allarea[4].num){
               this.move(5,4,true);
-              if(this.allarea[7].has==true&&this.allarea[6].has==true){
-                if(this.allarea[7].num==this.allarea[6].num){
-                  this.move(6,5,false);
-                  this.move(7,5,true);
-                }else{
-                  this.move(6,5,false);
-                  this.move(7,6,false);
-                }
-              }else if(this.allarea[7].has==true&&this.allarea[6].has==false){
-                this.move(7,5,false);
-              }else if(this.allarea[6].has==true&&this.allarea[7].has==false){
+              if(this.allarea[6].has===true){
                 this.move(6,5,false);
+                if(this.allarea[7].has===true){
+                  if(this.allarea[7].num===this.allarea[5].num){
+                    this.move(7,5,true);
+                  }else{
+                    this.move(7,6,false);
+                  }
+                }
+              }else{
+                if(this.allarea[7].has===true){
+                  this.move(7,5,false);
+                }
               }
             }else{
-              if(this.allarea[6].has==true){
-                if(this.allarea[6].num==this.allarea[5].num){
+              if(this.allarea[6].has===true){
+                if(this.allarea[6].num===this.allarea[5].num){
                   this.move(6,5,true);
-                  if(this.allarea[7].has==true){
+                  if(this.allarea[7].has===true){
                     this.move(7,6,false);
                   }
                 }else{
-                  if(this.allarea[7].has==true){
-                    if(this.allarea[7].num==this.allarea[6].num){
+                  if(this.allarea[7].has===true){
+                    if(this.allarea[7].num===this.allarea[6].num){
                       this.move(7,6,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[7].has==true){
-                  if(this.allarea[7].num==this.allarea[5].num){
+                if(this.allarea[7].has===true){
+                  if(this.allarea[7].num===this.allarea[5].num){
                     this.move(7,5,true);
                   }else{
                     this.move(7,6,false);
@@ -824,25 +834,25 @@
               }
             }
           }else{
-            if(this.allarea[6].has==true){
-              if(this.allarea[6].num==this.allarea[4].num){
+            if(this.allarea[6].has===true){
+              if(this.allarea[6].num===this.allarea[4].num){
                 this.move(6,4,true);
-                if(this.allarea[7].has==true){
+                if(this.allarea[7].has===true){
                   this.move(7,5,false);
                 };
               }else{
                 this.move(6,5,false);
-                if(this.allarea[7].has==true){
-                  if(this.allarea[7].num==this.allarea[5].num){
+                if(this.allarea[7].has===true){
+                  if(this.allarea[7].num===this.allarea[5].num){
                     this.move(7,5,true);
                   }else{
-                    this.move(7,6,true);
+                    this.move(7,6,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[7].has==true){
-                if(this.allarea[7].num==this.allarea[4].num){
+              if(this.allarea[7].has===true){
+                if(this.allarea[7].num===this.allarea[4].num){
                   this.move(7,4,true);
                 }else{
                   this.move(7,5,false);
@@ -851,18 +861,18 @@
             }
           }
         }else{
-          if(this.allarea[5].has==true){
+          if(this.allarea[5].has===true){
             this.move(5,4,false);
-            if(this.allarea[6].has==true){
-              if(this.allarea[6].num==this.allarea[4].num){
+            if(this.allarea[6].has===true){
+              if(this.allarea[6].num===this.allarea[4].num){
                 this.move(6,4,true);
-                if(this.allarea[7].has==true){
+                if(this.allarea[7].has===true){
                   this.move(7,5,false);
                 };
               }else{
                 this.move(6,5,false);
-                if(this.allarea[7].has==true){
-                  if(this.allarea[7].num==this.allarea[5].num){
+                if(this.allarea[7].has===true){
+                  if(this.allarea[7].num===this.allarea[5].num){
                     this.move(7,5,true);
                   }else{
                     this.move(7,6,false);
@@ -870,8 +880,8 @@
                 };
               }
             }else{
-              if(this.allarea[7].has==true){
-                if(this.allarea[7].num==this.allarea[4].num){
+              if(this.allarea[7].has===true){
+                if(this.allarea[7].num===this.allarea[4].num){
                   this.move(7,4,true);
                 }else{
                   this.move(7,5,false);
@@ -879,57 +889,58 @@
               };
             }
           }else{
-            if(this.allarea[6].has==true){
+            if(this.allarea[6].has===true){
               this.move(6,4,false);
-              if(this.allarea[7].has==true){
-                if(this.allarea[7].num==this.allarea[4].num){
+              if(this.allarea[7].has===true){
+                if(this.allarea[7].num===this.allarea[4].num){
                   this.move(7,4,true);
                 }else{
                   this.move(7,5,false);
                 }
               };
             }else{
-              if(this.allarea[7].has==true){
+              if(this.allarea[7].has===true){
                 this.move(7,4,false);
               }
             }
           }
         };
 
-        if(this.allarea[8].has==true){
-          if(this.allarea[9].has==true){
-            if(this.allarea[9].num==this.allarea[8].num){
+        if(this.allarea[8].has===true){
+          if(this.allarea[9].has===true){
+            if(this.allarea[9].num===this.allarea[8].num){
               this.move(9,8,true);
-              if(this.allarea[11].has==true&&this.allarea[10].has==true){
-                if(this.allarea[11].num==this.allarea[10].num){
-                  this.move(10,9,false);
-                  this.move(11,9,true);
-                }else{
-                  this.move(10,9,false);
-                  this.move(11,10,false);
-                }
-              }else if(this.allarea[11].has==true&&this.allarea[10].has==false){
-                this.move(11,9,false);
-              }else if(this.allarea[10].has==true&&this.allarea[11].has==false){
+              if(this.allarea[10].has===true){
                 this.move(10,9,false);
+                if(this.allarea[11].has===true){
+                  if(this.allarea[11].num===this.allarea[9].num){
+                    this.move(11,9,true);
+                  }else{
+                    this.move(11,10,false);
+                  }
+                }
+              }else{
+                if(this.allarea[11].has===true){
+                  this.move(11,9,false);
+                }
               }
             }else{
-              if(this.allarea[10].has==true){
-                if(this.allarea[10].num==this.allarea[9].num){
+              if(this.allarea[10].has===true){
+                if(this.allarea[10].num===this.allarea[9].num){
                   this.move(10,9,true);
-                  if(this.allarea[11].has==true){
+                  if(this.allarea[11].has===true){
                     this.move(11,10,false);
                   }
                 }else{
-                  if(this.allarea[11].has==true){
-                    if(this.allarea[11].num==this.allarea[10].num){
+                  if(this.allarea[11].has===true){
+                    if(this.allarea[11].num===this.allarea[10].num){
                       this.move(11,10,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[11].has==true){
-                  if(this.allarea[11].num==this.allarea[9].num){
+                if(this.allarea[11].has===true){
+                  if(this.allarea[11].num===this.allarea[9].num){
                     this.move(11,9,true);
                   }else{
                     this.move(11,10,false);
@@ -938,25 +949,25 @@
               }
             }
           }else{
-            if(this.allarea[10].has==true){
-              if(this.allarea[10].num==this.allarea[8].num){
+            if(this.allarea[10].has===true){
+              if(this.allarea[10].num===this.allarea[8].num){
                 this.move(10,8,true);
-                if(this.allarea[11].has==true){
+                if(this.allarea[11].has===true){
                   this.move(11,9,false);
                 };
               }else{
                 this.move(10,9,false);
-                if(this.allarea[11].has==true){
-                  if(this.allarea[11].num==this.allarea[9].num){
+                if(this.allarea[11].has===true){
+                  if(this.allarea[11].num===this.allarea[9].num){
                     this.move(11,9,true);
                   }else{
-                    this.move(11,10,true);
+                    this.move(11,10,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[11].has==true){
-                if(this.allarea[11].num==this.allarea[8].num){
+              if(this.allarea[11].has===true){
+                if(this.allarea[11].num===this.allarea[8].num){
                   this.move(11,8,true);
                 }else{
                   this.move(11,9,false);
@@ -965,18 +976,18 @@
             }
           }
         }else{
-          if(this.allarea[9].has==true){
+          if(this.allarea[9].has===true){
             this.move(9,8,false);
-            if(this.allarea[10].has==true){
-              if(this.allarea[10].num==this.allarea[8].num){
+            if(this.allarea[10].has===true){
+              if(this.allarea[10].num===this.allarea[8].num){
                 this.move(10,8,true);
-                if(this.allarea[11].has==true){
+                if(this.allarea[11].has===true){
                   this.move(11,9,false);
                 };
               }else{
                 this.move(10,9,false);
-                if(this.allarea[11].has==true){
-                  if(this.allarea[11].num==this.allarea[9].num){
+                if(this.allarea[11].has===true){
+                  if(this.allarea[11].num===this.allarea[9].num){
                     this.move(11,9,true);
                   }else{
                     this.move(11,10,false);
@@ -984,8 +995,8 @@
                 };
               }
             }else{
-              if(this.allarea[11].has==true){
-                if(this.allarea[11].num==this.allarea[8].num){
+              if(this.allarea[11].has===true){
+                if(this.allarea[11].num===this.allarea[8].num){
                   this.move(11,8,true);
                 }else{
                   this.move(11,9,false);
@@ -993,57 +1004,58 @@
               };
             }
           }else{
-            if(this.allarea[10].has==true){
+            if(this.allarea[10].has===true){
               this.move(10,8,false);
-              if(this.allarea[11].has==true){
-                if(this.allarea[11].num==this.allarea[8].num){
+              if(this.allarea[11].has===true){
+                if(this.allarea[11].num===this.allarea[8].num){
                   this.move(11,8,true);
                 }else{
                   this.move(11,9,false);
                 }
               };
             }else{
-              if(this.allarea[11].has==true){
+              if(this.allarea[11].has===true){
                 this.move(11,8,false);
               }
             }
           }
         };
 
-        if(this.allarea[12].has==true){
-          if(this.allarea[13].has==true){
-            if(this.allarea[13].num==this.allarea[12].num){
+        if(this.allarea[12].has===true){
+          if(this.allarea[13].has===true){
+            if(this.allarea[13].num===this.allarea[12].num){
               this.move(13,12,true);
-              if(this.allarea[15].has==true&&this.allarea[14].has==true){
-                if(this.allarea[15].num==this.allarea[14].num){
-                  this.move(15,13,false);
-                  this.move(15,13,true);
-                }else{
-                  this.move(14,13,false);
-                  this.move(15,14,false);
-                }
-              }else if(this.allarea[15].has==true&&this.allarea[14].has==false){
-                this.move(15,13,false);
-              }else if(this.allarea[14].has==true&&this.allarea[15].has==false){
+              if(this.allarea[14].has===true){
                 this.move(14,13,false);
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[13].num){
+                    this.move(15,13,true);
+                  }else{
+                    this.move(15,14,false);
+                  }
+                }
+              }else{
+                if(this.allarea[15].has===true){
+                  this.move(15,13,false);
+                }
               }
             }else{
-              if(this.allarea[14].has==true){
-                if(this.allarea[14].num==this.allarea[13].num){
+              if(this.allarea[14].has===true){
+                if(this.allarea[14].num===this.allarea[13].num){
                   this.move(14,13,true);
-                  if(this.allarea[15].has==true){
+                  if(this.allarea[15].has===true){
                     this.move(15,14,false);
                   }
                 }else{
-                  if(this.allarea[15].has==true){
-                    if(this.allarea[15].num==this.allarea[14].num){
+                  if(this.allarea[15].has===true){
+                    if(this.allarea[15].num===this.allarea[14].num){
                       this.move(15,14,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[13].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[13].num){
                     this.move(15,13,true);
                   }else{
                     this.move(15,14,false);
@@ -1052,25 +1064,25 @@
               }
             }
           }else{
-            if(this.allarea[14].has==true){
-              if(this.allarea[14].num==this.allarea[12].num){
+            if(this.allarea[14].has===true){
+              if(this.allarea[14].num===this.allarea[12].num){
                 this.move(14,12,true);
-                if(this.allarea[15].has==true){
+                if(this.allarea[15].has===true){
                   this.move(15,13,false);
                 };
               }else{
                 this.move(14,13,false);
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[13].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[13].num){
                     this.move(15,13,true);
                   }else{
-                    this.move(15,14,true);
+                    this.move(15,14,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[12].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[12].num){
                   this.move(15,12,true);
                 }else{
                   this.move(15,13,false);
@@ -1079,18 +1091,18 @@
             }
           }
         }else{
-          if(this.allarea[13].has==true){
+          if(this.allarea[13].has===true){
             this.move(13,12,false);
-            if(this.allarea[14].has==true){
-              if(this.allarea[14].num==this.allarea[12].num){
+            if(this.allarea[14].has===true){
+              if(this.allarea[14].num===this.allarea[12].num){
                 this.move(14,12,true);
-                if(this.allarea[15].has==true){
+                if(this.allarea[15].has===true){
                   this.move(15,13,false);
                 };
               }else{
                 this.move(14,13,false);
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[13].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[13].num){
                     this.move(15,13,true);
                   }else{
                     this.move(15,14,false);
@@ -1098,8 +1110,8 @@
                 };
               }
             }else{
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[12].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[12].num){
                   this.move(15,12,true);
                 }else{
                   this.move(15,13,false);
@@ -1107,60 +1119,64 @@
               };
             }
           }else{
-            if(this.allarea[14].has==true){
+            if(this.allarea[14].has===true){
               this.move(14,12,false);
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[12].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[12].num){
                   this.move(15,12,true);
                 }else{
                   this.move(15,13,false);
                 }
               };
             }else{
-              if(this.allarea[15].has==true){
+              if(this.allarea[15].has===true){
                 this.move(15,12,false);
               }
             }
           }
         };
-        this.getnewfangkuai();
+        var that=this;
+        setTimeout(function(){
+          that.getnewfangkuai();
+        },100);
       },
       tobottom:function(){
         console.log('bottom');
-        if(this.allarea[12].has==true){
-          if(this.allarea[8].has==true){
-            if(this.allarea[8].num==this.allarea[12].num){
+        if(this.allarea[12].has===true){
+          if(this.allarea[8].has===true){
+            if(this.allarea[8].num===this.allarea[12].num){
               this.move(8,12,true);
-              if(this.allarea[0].has==true&&this.allarea[4].has==true){
-                if(this.allarea[0].num==this.allarea[4].num){
-                  this.move(4,8,false);
-                  this.move(0,8,true);
-                }else{
-                  this.move(4,8,false);
-                  this.move(0,4,false);
-                }
-              }else if(this.allarea[0].has==true&&this.allarea[4].has==false){
-                this.move(0,8,false);
-              }else if(this.allarea[4].has==true&&this.allarea[0].has==false){
+              if(this.allarea[4].has===true){
                 this.move(4,8,false);
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[8].num){
+                    this.move(0,8,true);
+                  }else{
+                    this.move(0,4,false);
+                  }
+                }
+              }else{
+                if(this.allarea[0].has===true){
+                  this.move(0,8,false);
+                }
               }
             }else{
-              if(this.allarea[4].has==true){
-                if(this.allarea[4].num==this.allarea[8].num){
+              if(this.allarea[4].has===true){
+                if(this.allarea[4].num===this.allarea[8].num){
                   this.move(4,8,true);
-                  if(this.allarea[0].has==true){
+                  if(this.allarea[0].has===true){
                     this.move(0,4,false);
                   }
                 }else{
-                  if(this.allarea[0].has==true){
-                    if(this.allarea[0].num==this.allarea[4].num){
+                  if(this.allarea[0].has===true){
+                    if(this.allarea[0].num===this.allarea[4].num){
                       this.move(0,4,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[8].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[8].num){
                     this.move(0,8,true);
                   }else{
                     this.move(0,4,false);
@@ -1169,25 +1185,25 @@
               }
             }
           }else{
-            if(this.allarea[4].has==true){
-              if(this.allarea[4].num==this.allarea[12].num){
+            if(this.allarea[4].has===true){
+              if(this.allarea[4].num===this.allarea[12].num){
                 this.move(4,12,true);
-                if(this.allarea[0].has==true){
+                if(this.allarea[0].has===true){
                   this.move(0,8,false);
                 };
               }else{
                 this.move(4,8,false);
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[8].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[8].num){
                     this.move(0,8,true);
                   }else{
-                    this.move(0,4,true);
+                    this.move(0,4,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[12].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[12].num){
                   this.move(0,12,true);
                 }else{
                   this.move(0,8,false);
@@ -1196,18 +1212,18 @@
             }
           }
         }else{
-          if(this.allarea[8].has==true){
+          if(this.allarea[8].has===true){
             this.move(8,12,false);
-            if(this.allarea[4].has==true){
-              if(this.allarea[4].num==this.allarea[12].num){
+            if(this.allarea[4].has===true){
+              if(this.allarea[4].num===this.allarea[12].num){
                 this.move(4,12,true);
-                if(this.allarea[0].has==true){
+                if(this.allarea[0].has===true){
                   this.move(0,8,false);
                 };
               }else{
                 this.move(4,8,false);
-                if(this.allarea[0].has==true){
-                  if(this.allarea[0].num==this.allarea[8].num){
+                if(this.allarea[0].has===true){
+                  if(this.allarea[0].num===this.allarea[8].num){
                     this.move(0,8,true);
                   }else{
                     this.move(0,4,false);
@@ -1215,8 +1231,8 @@
                 };
               }
             }else{
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[12].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[12].num){
                   this.move(0,12,true);
                 }else{
                   this.move(0,8,false);
@@ -1224,57 +1240,58 @@
               };
             }
           }else{
-            if(this.allarea[4].has==true){
+            if(this.allarea[4].has===true){
               this.move(4,12,false);
-              if(this.allarea[0].has==true){
-                if(this.allarea[0].num==this.allarea[12].num){
+              if(this.allarea[0].has===true){
+                if(this.allarea[0].num===this.allarea[12].num){
                   this.move(0,12,true);
                 }else{
                   this.move(0,8,false);
                 }
               };
             }else{
-              if(this.allarea[0].has==true){
+              if(this.allarea[0].has===true){
                 this.move(0,12,false);
               }
             }
           }
         };
 
-        if(this.allarea[13].has==true){
-          if(this.allarea[9].has==true){
-            if(this.allarea[9].num==this.allarea[13].num){
+        if(this.allarea[13].has===true){
+          if(this.allarea[9].has===true){
+            if(this.allarea[9].num===this.allarea[13].num){
               this.move(9,13,true);
-              if(this.allarea[1].has==true&&this.allarea[5].has==true){
-                if(this.allarea[1].num==this.allarea[5].num){
-                  this.move(5,9,false);
-                  this.move(1,9,true);
-                }else{
-                  this.move(5,9,false);
-                  this.move(1,5,false);
-                }
-              }else if(this.allarea[1].has==true&&this.allarea[5].has==false){
-                this.move(1,9,false);
-              }else if(this.allarea[5].has==true&&this.allarea[1].has==false){
+              if(this.allarea[5].has===true){
                 this.move(5,9,false);
+                if(this.allarea[1].has===true){
+                  if(this.allarea[1].num===this.allarea[9].num){
+                    this.move(1,9,true);
+                  }else{
+                    this.move(1,5,false);
+                  }
+                }
+              }else{
+                if(this.allarea[1].has===true){
+                  this.move(1,9,false);
+                }
               }
             }else{
-              if(this.allarea[5].has==true){
-                if(this.allarea[5].num==this.allarea[9].num){
+              if(this.allarea[5].has===true){
+                if(this.allarea[5].num===this.allarea[9].num){
                   this.move(5,9,true);
-                  if(this.allarea[1].has==true){
+                  if(this.allarea[1].has===true){
                     this.move(1,5,false);
                   }
                 }else{
-                  if(this.allarea[1].has==true){
-                    if(this.allarea[1].num==this.allarea[5].num){
+                  if(this.allarea[1].has===true){
+                    if(this.allarea[1].num===this.allarea[5].num){
                       this.move(1,5,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[1].has==true){
-                  if(this.allarea[1].num==this.allarea[9].num){
+                if(this.allarea[1].has===true){
+                  if(this.allarea[1].num===this.allarea[9].num){
                     this.move(1,9,true);
                   }else{
                     this.move(1,5,false);
@@ -1283,25 +1300,25 @@
               }
             }
           }else{
-            if(this.allarea[5].has==true){
-              if(this.allarea[5].num==this.allarea[13].num){
+            if(this.allarea[5].has===true){
+              if(this.allarea[5].num===this.allarea[13].num){
                 this.move(5,13,true);
-                if(this.allarea[1].has==true){
+                if(this.allarea[1].has===true){
                   this.move(1,9,false);
                 };
               }else{
                 this.move(5,9,false);
-                if(this.allarea[1].has==true){
-                  if(this.allarea[1].num==this.allarea[9].num){
+                if(this.allarea[1].has===true){
+                  if(this.allarea[1].num===this.allarea[9].num){
                     this.move(1,9,true);
                   }else{
-                    this.move(1,5,true);
+                    this.move(1,5,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[1].has==true){
-                if(this.allarea[1].num==this.allarea[13].num){
+              if(this.allarea[1].has===true){
+                if(this.allarea[1].num===this.allarea[13].num){
                   this.move(1,13,true);
                 }else{
                   this.move(1,9,false);
@@ -1310,18 +1327,18 @@
             }
           }
         }else{
-          if(this.allarea[9].has==true){
+          if(this.allarea[9].has===true){
             this.move(9,13,false);
-            if(this.allarea[5].has==true){
-              if(this.allarea[5].num==this.allarea[13].num){
+            if(this.allarea[5].has===true){
+              if(this.allarea[5].num===this.allarea[13].num){
                 this.move(5,13,true);
-                if(this.allarea[1].has==true){
+                if(this.allarea[1].has===true){
                   this.move(1,9,false);
                 };
               }else{
                 this.move(5,9,false);
-                if(this.allarea[1].has==true){
-                  if(this.allarea[1].num==this.allarea[9].num){
+                if(this.allarea[1].has===true){
+                  if(this.allarea[1].num===this.allarea[9].num){
                     this.move(1,9,true);
                   }else{
                     this.move(1,5,false);
@@ -1329,8 +1346,8 @@
                 };
               }
             }else{
-              if(this.allarea[1].has==true){
-                if(this.allarea[1].num==this.allarea[13].num){
+              if(this.allarea[1].has===true){
+                if(this.allarea[1].num===this.allarea[13].num){
                   this.move(1,13,true);
                 }else{
                   this.move(1,9,false);
@@ -1338,57 +1355,58 @@
               };
             }
           }else{
-            if(this.allarea[5].has==true){
+            if(this.allarea[5].has===true){
               this.move(5,13,false);
-              if(this.allarea[1].has==true){
-                if(this.allarea[1].num==this.allarea[13].num){
+              if(this.allarea[1].has===true){
+                if(this.allarea[1].num===this.allarea[13].num){
                   this.move(1,13,true);
                 }else{
                   this.move(1,9,false);
                 }
               };
             }else{
-              if(this.allarea[1].has==true){
+              if(this.allarea[1].has===true){
                 this.move(1,13,false);
               }
             }
           }
         };
 
-        if(this.allarea[14].has==true){
-          if(this.allarea[10].has==true){
-            if(this.allarea[10].num==this.allarea[14].num){
+        if(this.allarea[14].has===true){
+          if(this.allarea[10].has===true){
+            if(this.allarea[10].num===this.allarea[14].num){
               this.move(10,14,true);
-              if(this.allarea[2].has==true&&this.allarea[6].has==true){
-                if(this.allarea[2].num==this.allarea[6].num){
-                  this.move(6,10,false);
-                  this.move(2,10,true);
-                }else{
-                  this.move(6,10,false);
-                  this.move(2,6,false);
-                }
-              }else if(this.allarea[2].has==true&&this.allarea[6].has==false){
-                this.move(2,10,false);
-              }else if(this.allarea[6].has==true&&this.allarea[2].has==false){
+              if(this.allarea[6].has===true){
                 this.move(6,10,false);
+                if(this.allarea[2].has===true){
+                  if(this.allarea[2].num===this.allarea[10].num){
+                    this.move(2,10,true);
+                  }else{
+                    this.move(2,6,false);
+                  }
+                }
+              }else{
+                if(this.allarea[2].has===true){
+                  this.move(2,10,false);
+                }
               }
             }else{
-              if(this.allarea[6].has==true){
-                if(this.allarea[6].num==this.allarea[10].num){
+              if(this.allarea[6].has===true){
+                if(this.allarea[6].num===this.allarea[10].num){
                   this.move(6,10,true);
-                  if(this.allarea[2].has==true){
+                  if(this.allarea[2].has===true){
                     this.move(2,6,false);
                   }
                 }else{
-                  if(this.allarea[2].has==true){
-                    if(this.allarea[2].num==this.allarea[6].num){
+                  if(this.allarea[2].has===true){
+                    if(this.allarea[2].num===this.allarea[6].num){
                       this.move(2,6,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[2].has==true){
-                  if(this.allarea[2].num==this.allarea[10].num){
+                if(this.allarea[2].has===true){
+                  if(this.allarea[2].num===this.allarea[10].num){
                     this.move(2,10,true);
                   }else{
                     this.move(2,6,false);
@@ -1397,25 +1415,25 @@
               }
             }
           }else{
-            if(this.allarea[6].has==true){
-              if(this.allarea[6].num==this.allarea[14].num){
+            if(this.allarea[6].has===true){
+              if(this.allarea[6].num===this.allarea[14].num){
                 this.move(6,14,true);
-                if(this.allarea[2].has==true){
+                if(this.allarea[2].has===true){
                   this.move(2,10,false);
                 };
               }else{
                 this.move(6,10,false);
-                if(this.allarea[2].has==true){
-                  if(this.allarea[2].num==this.allarea[10].num){
+                if(this.allarea[2].has===true){
+                  if(this.allarea[2].num===this.allarea[10].num){
                     this.move(2,10,true);
                   }else{
-                    this.move(2,6,true);
+                    this.move(2,6,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[2].has==true){
-                if(this.allarea[2].num==this.allarea[14].num){
+              if(this.allarea[2].has===true){
+                if(this.allarea[2].num===this.allarea[14].num){
                   this.move(2,14,true);
                 }else{
                   this.move(2,10,false);
@@ -1424,18 +1442,18 @@
             }
           }
         }else{
-          if(this.allarea[10].has==true){
+          if(this.allarea[10].has===true){
             this.move(10,14,false);
-            if(this.allarea[6].has==true){
-              if(this.allarea[6].num==this.allarea[14].num){
+            if(this.allarea[6].has===true){
+              if(this.allarea[6].num===this.allarea[14].num){
                 this.move(6,14,true);
-                if(this.allarea[2].has==true){
+                if(this.allarea[2].has===true){
                   this.move(2,10,false);
                 };
               }else{
                 this.move(6,10,false);
-                if(this.allarea[2].has==true){
-                  if(this.allarea[2].num==this.allarea[10].num){
+                if(this.allarea[2].has===true){
+                  if(this.allarea[2].num===this.allarea[10].num){
                     this.move(2,10,true);
                   }else{
                     this.move(2,6,false);
@@ -1443,8 +1461,8 @@
                 };
               }
             }else{
-              if(this.allarea[2].has==true){
-                if(this.allarea[2].num==this.allarea[14].num){
+              if(this.allarea[2].has===true){
+                if(this.allarea[2].num===this.allarea[14].num){
                   this.move(2,14,true);
                 }else{
                   this.move(2,10,false);
@@ -1452,57 +1470,58 @@
               };
             }
           }else{
-            if(this.allarea[6].has==true){
+            if(this.allarea[6].has===true){
               this.move(6,14,false);
-              if(this.allarea[2].has==true){
-                if(this.allarea[2].num==this.allarea[14].num){
+              if(this.allarea[2].has===true){
+                if(this.allarea[2].num===this.allarea[14].num){
                   this.move(2,14,true);
                 }else{
                   this.move(2,10,false);
                 }
               };
             }else{
-              if(this.allarea[2].has==true){
+              if(this.allarea[2].has===true){
                 this.move(2,14,false);
               }
             }
           }
         };
 
-        if(this.allarea[15].has==true){
-          if(this.allarea[11].has==true){
-            if(this.allarea[11].num==this.allarea[15].num){
+        if(this.allarea[15].has===true){
+          if(this.allarea[11].has===true){
+            if(this.allarea[11].num===this.allarea[15].num){
               this.move(11,15,true);
-              if(this.allarea[3].has==true&&this.allarea[7].has==true){
-                if(this.allarea[3].num==this.allarea[7].num){
-                  this.move(7,11,false);
-                  this.move(3,11,true);
-                }else{
-                  this.move(7,11,false);
-                  this.move(3,7,false);
-                }
-              }else if(this.allarea[3].has==true&&this.allarea[7].has==false){
-                this.move(3,11,false);
-              }else if(this.allarea[7].has==true&&this.allarea[3].has==false){
+              if(this.allarea[7].has===true){
                 this.move(7,11,false);
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[11].num){
+                    this.move(3,11,true);
+                  }else{
+                    this.move(3,7,false);
+                  }
+                }
+              }else{
+                if(this.allarea[3].has===true){
+                  this.move(3,11,false);
+                }
               }
             }else{
-              if(this.allarea[7].has==true){
-                if(this.allarea[7].num==this.allarea[11].num){
+              if(this.allarea[7].has===true){
+                if(this.allarea[7].num===this.allarea[11].num){
                   this.move(7,11,true);
-                  if(this.allarea[3].has==true){
+                  if(this.allarea[3].has===true){
                     this.move(3,7,false);
                   }
                 }else{
-                  if(this.allarea[3].has==true){
-                    if(this.allarea[3].num==this.allarea[7].num){
+                  if(this.allarea[3].has===true){
+                    if(this.allarea[3].num===this.allarea[7].num){
                       this.move(3,7,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[11].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[11].num){
                     this.move(3,11,true);
                   }else{
                     this.move(3,7,false);
@@ -1511,25 +1530,25 @@
               }
             }
           }else{
-            if(this.allarea[7].has==true){
-              if(this.allarea[7].num==this.allarea[15].num){
+            if(this.allarea[7].has===true){
+              if(this.allarea[7].num===this.allarea[15].num){
                 this.move(7,15,true);
-                if(this.allarea[3].has==true){
+                if(this.allarea[3].has===true){
                   this.move(3,11,false);
                 };
               }else{
                 this.move(7,11,false);
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[11].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[11].num){
                     this.move(3,11,true);
                   }else{
-                    this.move(3,7,true);
+                    this.move(3,7,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[15].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[15].num){
                   this.move(3,15,true);
                 }else{
                   this.move(3,11,false);
@@ -1538,18 +1557,18 @@
             }
           }
         }else{
-          if(this.allarea[11].has==true){
+          if(this.allarea[11].has===true){
             this.move(11,15,false);
-            if(this.allarea[7].has==true){
-              if(this.allarea[7].num==this.allarea[15].num){
+            if(this.allarea[7].has===true){
+              if(this.allarea[7].num===this.allarea[15].num){
                 this.move(7,15,true);
-                if(this.allarea[3].has==true){
+                if(this.allarea[3].has===true){
                   this.move(3,11,false);
                 };
               }else{
                 this.move(7,11,false);
-                if(this.allarea[3].has==true){
-                  if(this.allarea[3].num==this.allarea[11].num){
+                if(this.allarea[3].has===true){
+                  if(this.allarea[3].num===this.allarea[11].num){
                     this.move(3,11,true);
                   }else{
                     this.move(3,7,false);
@@ -1557,8 +1576,8 @@
                 };
               }
             }else{
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[15].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[15].num){
                   this.move(3,15,true);
                 }else{
                   this.move(3,11,false);
@@ -1566,60 +1585,64 @@
               };
             }
           }else{
-            if(this.allarea[7].has==true){
+            if(this.allarea[7].has===true){
               this.move(7,15,false);
-              if(this.allarea[3].has==true){
-                if(this.allarea[3].num==this.allarea[15].num){
+              if(this.allarea[3].has===true){
+                if(this.allarea[3].num===this.allarea[15].num){
                   this.move(3,15,true);
                 }else{
                   this.move(3,11,false);
                 }
               };
             }else{
-              if(this.allarea[3].has==true){
+              if(this.allarea[3].has===true){
                 this.move(3,15,false);
               }
             }
           }
         };
-        this.getnewfangkuai();
+        var that=this;
+        setTimeout(function(){
+          that.getnewfangkuai();
+        },100);
       },
       totop:function(){
         console.log('top');
-        if(this.allarea[0].has==true){
-          if(this.allarea[4].has==true){
-            if(this.allarea[4].num==this.allarea[0].num){
+        if(this.allarea[0].has===true){
+          if(this.allarea[4].has===true){
+            if(this.allarea[4].num===this.allarea[0].num){
               this.move(4,0,true);
-              if(this.allarea[12].has==true&&this.allarea[8].has==true){
-                if(this.allarea[12].num==this.allarea[8].num){
-                  this.move(8,4,false);
-                  this.move(12,4,true);
-                }else{
-                  this.move(8,4,false);
-                  this.move(12,8,false);
-                }
-              }else if(this.allarea[12].has==true&&this.allarea[8].has==false){
-                this.move(12,4,false);
-              }else if(this.allarea[8].has==true&&this.allarea[12].has==false){
+              if(this.allarea[8].has===true){
                 this.move(8,4,false);
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[4].num){
+                    this.move(12,4,true);
+                  }else{
+                    this.move(12,8,false);
+                  }
+                }
+              }else{
+                if(this.allarea[12].has===true){
+                  this.move(12,4,false);
+                }
               }
             }else{
-              if(this.allarea[8].has==true){
-                if(this.allarea[8].num==this.allarea[4].num){
+              if(this.allarea[8].has===true){
+                if(this.allarea[8].num===this.allarea[4].num){
                   this.move(8,4,true);
-                  if(this.allarea[12].has==true){
+                  if(this.allarea[12].has===true){
                     this.move(12,8,false);
                   }
                 }else{
-                  if(this.allarea[12].has==true){
-                    if(this.allarea[12].num==this.allarea[8].num){
+                  if(this.allarea[12].has===true){
+                    if(this.allarea[12].num===this.allarea[8].num){
                       this.move(12,8,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[4].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[4].num){
                     this.move(12,4,true);
                   }else{
                     this.move(12,8,false);
@@ -1628,25 +1651,25 @@
               }
             }
           }else{
-            if(this.allarea[8].has==true){
-              if(this.allarea[8].num==this.allarea[0].num){
+            if(this.allarea[8].has===true){
+              if(this.allarea[8].num===this.allarea[0].num){
                 this.move(8,0,true);
-                if(this.allarea[12].has==true){
+                if(this.allarea[12].has===true){
                   this.move(12,4,false);
                 };
               }else{
                 this.move(8,4,false);
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[4].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[4].num){
                     this.move(12,4,true);
                   }else{
-                    this.move(12,8,true);
+                    this.move(12,8,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[0].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[0].num){
                   this.move(12,0,true);
                 }else{
                   this.move(12,4,false);
@@ -1655,18 +1678,18 @@
             }
           }
         }else{
-          if(this.allarea[4].has==true){
+          if(this.allarea[4].has===true){
             this.move(4,0,false);
-            if(this.allarea[8].has==true){
-              if(this.allarea[8].num==this.allarea[0].num){
+            if(this.allarea[8].has===true){
+              if(this.allarea[8].num===this.allarea[0].num){
                 this.move(8,0,true);
-                if(this.allarea[12].has==true){
+                if(this.allarea[12].has===true){
                   this.move(12,4,false);
                 };
               }else{
                 this.move(8,4,false);
-                if(this.allarea[12].has==true){
-                  if(this.allarea[12].num==this.allarea[4].num){
+                if(this.allarea[12].has===true){
+                  if(this.allarea[12].num===this.allarea[4].num){
                     this.move(12,4,true);
                   }else{
                     this.move(12,8,false);
@@ -1674,8 +1697,8 @@
                 };
               }
             }else{
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[0].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[0].num){
                   this.move(12,0,true);
                 }else{
                   this.move(12,4,false);
@@ -1683,57 +1706,58 @@
               };
             }
           }else{
-            if(this.allarea[8].has==true){
+            if(this.allarea[8].has===true){
               this.move(8,0,false);
-              if(this.allarea[12].has==true){
-                if(this.allarea[12].num==this.allarea[0].num){
+              if(this.allarea[12].has===true){
+                if(this.allarea[12].num===this.allarea[0].num){
                   this.move(12,0,true);
                 }else{
                   this.move(12,4,false);
                 }
               };
             }else{
-              if(this.allarea[12].has==true){
+              if(this.allarea[12].has===true){
                 this.move(12,0,false);
               }
             }
           }
         };
 
-        if(this.allarea[1].has==true){
-          if(this.allarea[5].has==true){
-            if(this.allarea[5].num==this.allarea[1].num){
+        if(this.allarea[1].has===true){
+          if(this.allarea[5].has===true){
+            if(this.allarea[5].num===this.allarea[1].num){
               this.move(5,1,true);
-              if(this.allarea[13].has==true&&this.allarea[9].has==true){
-                if(this.allarea[13].num==this.allarea[9].num){
-                  this.move(9,5,false);
-                  this.move(13,5,true);
-                }else{
-                  this.move(9,5,false);
-                  this.move(13,9,false);
-                }
-              }else if(this.allarea[13].has==true&&this.allarea[9].has==false){
-                this.move(13,5,false);
-              }else if(this.allarea[9].has==true&&this.allarea[13].has==false){
+              if(this.allarea[9].has===true){
                 this.move(9,5,false);
+                if(this.allarea[13].has===true){
+                  if(this.allarea[13].num===this.allarea[5].num){
+                    this.move(13,5,true);
+                  }else{
+                    this.move(13,9,false);
+                  }
+                }
+              }else{
+                if(this.allarea[13].has===true){
+                  this.move(13,5,false);
+                }
               }
             }else{
-              if(this.allarea[9].has==true){
-                if(this.allarea[9].num==this.allarea[5].num){
+              if(this.allarea[9].has===true){
+                if(this.allarea[9].num===this.allarea[5].num){
                   this.move(9,5,true);
-                  if(this.allarea[13].has==true){
+                  if(this.allarea[13].has===true){
                     this.move(13,9,false);
                   }
                 }else{
-                  if(this.allarea[13].has==true){
-                    if(this.allarea[13].num==this.allarea[9].num){
+                  if(this.allarea[13].has===true){
+                    if(this.allarea[13].num===this.allarea[9].num){
                       this.move(13,9,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[13].has==true){
-                  if(this.allarea[13].num==this.allarea[5].num){
+                if(this.allarea[13].has===true){
+                  if(this.allarea[13].num===this.allarea[5].num){
                     this.move(13,5,true);
                   }else{
                     this.move(13,9,false);
@@ -1742,25 +1766,25 @@
               }
             }
           }else{
-            if(this.allarea[9].has==true){
-              if(this.allarea[9].num==this.allarea[1].num){
+            if(this.allarea[9].has===true){
+              if(this.allarea[9].num===this.allarea[1].num){
                 this.move(9,1,true);
-                if(this.allarea[13].has==true){
+                if(this.allarea[13].has===true){
                   this.move(13,5,false);
                 };
               }else{
                 this.move(9,5,false);
-                if(this.allarea[13].has==true){
-                  if(this.allarea[13].num==this.allarea[5].num){
+                if(this.allarea[13].has===true){
+                  if(this.allarea[13].num===this.allarea[5].num){
                     this.move(13,5,true);
                   }else{
-                    this.move(13,9,true);
+                    this.move(13,9,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[13].has==true){
-                if(this.allarea[13].num==this.allarea[1].num){
+              if(this.allarea[13].has===true){
+                if(this.allarea[13].num===this.allarea[1].num){
                   this.move(13,1,true);
                 }else{
                   this.move(13,5,false);
@@ -1769,18 +1793,18 @@
             }
           }
         }else{
-          if(this.allarea[5].has==true){
+          if(this.allarea[5].has===true){
             this.move(5,1,false);
-            if(this.allarea[9].has==true){
-              if(this.allarea[9].num==this.allarea[1].num){
+            if(this.allarea[9].has===true){
+              if(this.allarea[9].num===this.allarea[1].num){
                 this.move(9,1,true);
-                if(this.allarea[13].has==true){
+                if(this.allarea[13].has===true){
                   this.move(13,5,false);
                 };
               }else{
                 this.move(9,5,false);
-                if(this.allarea[13].has==true){
-                  if(this.allarea[13].num==this.allarea[5].num){
+                if(this.allarea[13].has===true){
+                  if(this.allarea[13].num===this.allarea[5].num){
                     this.move(13,5,true);
                   }else{
                     this.move(13,9,false);
@@ -1788,8 +1812,8 @@
                 };
               }
             }else{
-              if(this.allarea[13].has==true){
-                if(this.allarea[13].num==this.allarea[1].num){
+              if(this.allarea[13].has===true){
+                if(this.allarea[13].num===this.allarea[1].num){
                   this.move(13,1,true);
                 }else{
                   this.move(13,5,false);
@@ -1797,57 +1821,58 @@
               };
             }
           }else{
-            if(this.allarea[9].has==true){
+            if(this.allarea[9].has===true){
               this.move(9,1,false);
-              if(this.allarea[13].has==true){
-                if(this.allarea[13].num==this.allarea[1].num){
+              if(this.allarea[13].has===true){
+                if(this.allarea[13].num===this.allarea[1].num){
                   this.move(13,1,true);
                 }else{
                   this.move(13,5,false);
                 }
               };
             }else{
-              if(this.allarea[13].has==true){
+              if(this.allarea[13].has===true){
                 this.move(13,1,false);
               }
             }
           }
         };
 
-        if(this.allarea[2].has==true){
-          if(this.allarea[6].has==true){
-            if(this.allarea[6].num==this.allarea[2].num){
+        if(this.allarea[2].has===true){
+          if(this.allarea[6].has===true){
+            if(this.allarea[6].num===this.allarea[2].num){
               this.move(6,2,true);
-              if(this.allarea[14].has==true&&this.allarea[10].has==true){
-                if(this.allarea[14].num==this.allarea[10].num){
-                  this.move(10,6,false);
-                  this.move(14,6,true);
-                }else{
-                  this.move(10,6,false);
-                  this.move(14,10,false);
-                }
-              }else if(this.allarea[14].has==true&&this.allarea[10].has==false){
-                this.move(14,6,false);
-              }else if(this.allarea[10].has==true&&this.allarea[14].has==false){
+              if(this.allarea[10].has===true){
                 this.move(10,6,false);
+                if(this.allarea[14].has===true){
+                  if(this.allarea[14].num===this.allarea[6].num){
+                    this.move(14,6,true);
+                  }else{
+                    this.move(14,10,false);
+                  }
+                }
+              }else{
+                if(this.allarea[14].has===true){
+                  this.move(14,6,false);
+                }
               }
             }else{
-              if(this.allarea[10].has==true){
-                if(this.allarea[10].num==this.allarea[6].num){
+              if(this.allarea[10].has===true){
+                if(this.allarea[10].num===this.allarea[6].num){
                   this.move(10,6,true);
-                  if(this.allarea[14].has==true){
+                  if(this.allarea[14].has===true){
                     this.move(14,10,false);
                   }
                 }else{
-                  if(this.allarea[14].has==true){
-                    if(this.allarea[14].num==this.allarea[10].num){
+                  if(this.allarea[14].has===true){
+                    if(this.allarea[14].num===this.allarea[10].num){
                       this.move(14,10,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[14].has==true){
-                  if(this.allarea[14].num==this.allarea[6].num){
+                if(this.allarea[14].has===true){
+                  if(this.allarea[14].num===this.allarea[6].num){
                     this.move(14,6,true);
                   }else{
                     this.move(14,10,false);
@@ -1856,25 +1881,25 @@
               }
             }
           }else{
-            if(this.allarea[10].has==true){
-              if(this.allarea[10].num==this.allarea[2].num){
+            if(this.allarea[10].has===true){
+              if(this.allarea[10].num===this.allarea[2].num){
                 this.move(10,2,true);
-                if(this.allarea[14].has==true){
+                if(this.allarea[14].has===true){
                   this.move(14,6,false);
                 };
               }else{
                 this.move(10,6,false);
-                if(this.allarea[14].has==true){
-                  if(this.allarea[14].num==this.allarea[6].num){
+                if(this.allarea[14].has===true){
+                  if(this.allarea[14].num===this.allarea[6].num){
                     this.move(14,6,true);
                   }else{
-                    this.move(14,10,true);
+                    this.move(14,10,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[14].has==true){
-                if(this.allarea[14].num==this.allarea[2].num){
+              if(this.allarea[14].has===true){
+                if(this.allarea[14].num===this.allarea[2].num){
                   this.move(14,2,true);
                 }else{
                   this.move(14,6,false);
@@ -1883,18 +1908,18 @@
             }
           }
         }else{
-          if(this.allarea[6].has==true){
+          if(this.allarea[6].has===true){
             this.move(6,2,false);
-            if(this.allarea[10].has==true){
-              if(this.allarea[10].num==this.allarea[2].num){
+            if(this.allarea[10].has===true){
+              if(this.allarea[10].num===this.allarea[2].num){
                 this.move(10,2,true);
-                if(this.allarea[14].has==true){
+                if(this.allarea[14].has===true){
                   this.move(14,6,false);
                 };
               }else{
                 this.move(10,6,false);
-                if(this.allarea[14].has==true){
-                  if(this.allarea[14].num==this.allarea[6].num){
+                if(this.allarea[14].has===true){
+                  if(this.allarea[14].num===this.allarea[6].num){
                     this.move(14,6,true);
                   }else{
                     this.move(14,10,false);
@@ -1902,8 +1927,8 @@
                 };
               }
             }else{
-              if(this.allarea[14].has==true){
-                if(this.allarea[14].num==this.allarea[2].num){
+              if(this.allarea[14].has===true){
+                if(this.allarea[14].num===this.allarea[2].num){
                   this.move(14,2,true);
                 }else{
                   this.move(14,6,false);
@@ -1911,57 +1936,58 @@
               };
             }
           }else{
-            if(this.allarea[10].has==true){
+            if(this.allarea[10].has===true){
               this.move(10,2,false);
-              if(this.allarea[14].has==true){
-                if(this.allarea[14].num==this.allarea[2].num){
+              if(this.allarea[14].has===true){
+                if(this.allarea[14].num===this.allarea[2].num){
                   this.move(14,2,true);
                 }else{
                   this.move(14,6,false);
                 }
               };
             }else{
-              if(this.allarea[14].has==true){
+              if(this.allarea[14].has===true){
                 this.move(14,2,false);
               }
             }
           }
         };
 
-        if(this.allarea[3].has==true){
-          if(this.allarea[7].has==true){
-            if(this.allarea[7].num==this.allarea[3].num){
+        if(this.allarea[3].has===true){
+          if(this.allarea[7].has===true){
+            if(this.allarea[7].num===this.allarea[3].num){
               this.move(7,3,true);
-              if(this.allarea[15].has==true&&this.allarea[11].has==true){
-                if(this.allarea[15].num==this.allarea[11].num){
-                  this.move(11,7,false);
-                  this.move(15,7,true);
-                }else{
-                  this.move(11,7,false);
-                  this.move(15,11,false);
-                }
-              }else if(this.allarea[15].has==true&&this.allarea[11].has==false){
-                this.move(15,7,false);
-              }else if(this.allarea[11].has==true&&this.allarea[15].has==false){
+              if(this.allarea[11].has===true){
                 this.move(11,7,false);
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[7].num){
+                    this.move(15,7,true);
+                  }else{
+                    this.move(15,11,false);
+                  }
+                }
+              }else{
+                if(this.allarea[15].has===true){
+                  this.move(15,7,false);
+                }
               }
             }else{
-              if(this.allarea[11].has==true){
-                if(this.allarea[11].num==this.allarea[7].num){
+              if(this.allarea[11].has===true){
+                if(this.allarea[11].num===this.allarea[7].num){
                   this.move(11,7,true);
-                  if(this.allarea[15].has==true){
+                  if(this.allarea[15].has===true){
                     this.move(15,11,false);
                   }
                 }else{
-                  if(this.allarea[15].has==true){
-                    if(this.allarea[15].num==this.allarea[11].num){
+                  if(this.allarea[15].has===true){
+                    if(this.allarea[15].num===this.allarea[11].num){
                       this.move(15,11,true);
                     };
                   };
                 }
               }else{
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[7].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[7].num){
                     this.move(15,7,true);
                   }else{
                     this.move(15,11,false);
@@ -1970,25 +1996,25 @@
               }
             }
           }else{
-            if(this.allarea[11].has==true){
-              if(this.allarea[11].num==this.allarea[3].num){
+            if(this.allarea[11].has===true){
+              if(this.allarea[11].num===this.allarea[3].num){
                 this.move(11,3,true);
-                if(this.allarea[15].has==true){
+                if(this.allarea[15].has===true){
                   this.move(15,7,false);
                 };
               }else{
                 this.move(11,7,false);
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[7].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[7].num){
                     this.move(15,7,true);
                   }else{
-                    this.move(15,11,true);
+                    this.move(15,11,false);
                   }
                 }
               }
             }else{
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[3].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[3].num){
                   this.move(15,3,true);
                 }else{
                   this.move(15,7,false);
@@ -1997,18 +2023,18 @@
             }
           }
         }else{
-          if(this.allarea[7].has==true){
+          if(this.allarea[7].has===true){
             this.move(7,3,false);
-            if(this.allarea[11].has==true){
-              if(this.allarea[11].num==this.allarea[3].num){
+            if(this.allarea[11].has===true){
+              if(this.allarea[11].num===this.allarea[3].num){
                 this.move(11,3,true);
-                if(this.allarea[15].has==true){
+                if(this.allarea[15].has===true){
                   this.move(15,7,false);
                 };
               }else{
                 this.move(11,7,false);
-                if(this.allarea[15].has==true){
-                  if(this.allarea[15].num==this.allarea[7].num){
+                if(this.allarea[15].has===true){
+                  if(this.allarea[15].num===this.allarea[7].num){
                     this.move(15,7,true);
                   }else{
                     this.move(15,11,false);
@@ -2016,8 +2042,8 @@
                 };
               }
             }else{
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[3].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[3].num){
                   this.move(15,3,true);
                 }else{
                   this.move(15,7,false);
@@ -2025,23 +2051,26 @@
               };
             }
           }else{
-            if(this.allarea[11].has==true){
+            if(this.allarea[11].has===true){
               this.move(11,3,false);
-              if(this.allarea[15].has==true){
-                if(this.allarea[15].num==this.allarea[3].num){
+              if(this.allarea[15].has===true){
+                if(this.allarea[15].num===this.allarea[3].num){
                   this.move(15,3,true);
                 }else{
                   this.move(15,7,false);
                 }
               };
             }else{
-              if(this.allarea[15].has==true){
+              if(this.allarea[15].has===true){
                 this.move(15,3,false);
               }
             }
           }
         };
-        this.getnewfangkuai();
+        var that=this;
+        setTimeout(function(){
+          that.getnewfangkuai();
+        },100);
       },
       getnewfangkuai:function(){
         var a=Math.random()*15;
@@ -2077,1546 +2106,1546 @@
       },
       move:function(start,end,add){
         var that=this;
-        if(start==0&&end==1){
-          if(add==false){
+        if(start===0&&end===1){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[1].num=this.allarea[0].num;
             this.allarea[1].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==1&&end==0){
-          if(add==false){
+        if(start===1&&end===0){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[0].num=this.allarea[1].num;
             this.allarea[0].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==0&&end==2){
-          if(add==false){
+        if(start===0&&end===2){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[2].num=this.allarea[0].num;
             this.allarea[2].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[2].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==2&&end==0){
-          if(add==false){
+        if(start===2&&end===0){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[0].num=this.allarea[2].num;
             this.allarea[0].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==0&&end==3){
-          if(add==false){
+        if(start===0&&end===3){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[3].num=this.allarea[0].num;
             this.allarea[3].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==3&&end==0){
-          if(add==false){
+        if(start===3&&end===0){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[0].num=this.allarea[3].num;
             this.allarea[0].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
-        if(start==1&&end==2){
-          if(add==false){
+        if(start===1&&end===2){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[2].num=this.allarea[1].num;
             this.allarea[2].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[2].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==2&&end==1){
-          if(add==false){
+        if(start===2&&end===1){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[1].num=this.allarea[2].num;
             this.allarea[1].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==1&&end==3){
-          if(add==false){
+        if(start===1&&end===3){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[3].num=this.allarea[1].num;
             this.allarea[3].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==3&&end==1){
-          if(add==false){
+        if(start===3&&end===1){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[1].num=this.allarea[3].num;
             this.allarea[1].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
-        if(start==2&&end==3){
-          if(add==false){
+        if(start===2&&end===3){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[3].num=this.allarea[2].num;
             this.allarea[3].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==3&&end==2){
-          if(add==false){
+        if(start===3&&end===2){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[2].num=this.allarea[3].num;
             this.allarea[2].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
 
-        if(start==4&&end==5){
-          if(add==false){
+        if(start===4&&end===5){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[5].num=this.allarea[4].num;
             this.allarea[5].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==5&&end==4){
-          if(add==false){
+        if(start===5&&end===4){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[4].num=this.allarea[5].num;
             this.allarea[4].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==4&&end==6){
-          if(add==false){
+        if(start===4&&end===6){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[6].num=this.allarea[4].num;
             this.allarea[6].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==6&&end==4){
-          if(add==false){
+        if(start===6&&end===4){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[4].num=this.allarea[6].num;
             this.allarea[4].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==4&&end==7){
-          if(add==false){
+        if(start===4&&end===7){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[7].num=this.allarea[4].num;
             this.allarea[7].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==7&&end==4){
-          if(add==false){
+        if(start===7&&end===4){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[4].num=this.allarea[7].num;
             this.allarea[4].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
-        if(start==5&&end==6){
-          if(add==false){
+        if(start===5&&end===6){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[6].num=this.allarea[5].num;
             this.allarea[6].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==6&&end==5){
-          if(add==false){
+        if(start===6&&end===5){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[5].num=this.allarea[6].num;
             this.allarea[5].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==5&&end==7){
-          if(add==false){
+        if(start===5&&end===7){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[7].num=this.allarea[5].num;
             this.allarea[7].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==7&&end==5){
-          if(add==false){
+        if(start===7&&end===5){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[5].num=this.allarea[7].num;
             this.allarea[5].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
-        if(start==6&&end==7){
-          if(add==false){
+        if(start===6&&end===7){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[7].num=this.allarea[6].num;
             this.allarea[7].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==7&&end==6){
-          if(add==false){
+        if(start===7&&end===6){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[6].num=this.allarea[7].num;
             this.allarea[6].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
 
-        if(start==8&&end==9){
-          if(add==false){
+        if(start===8&&end===9){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[9].num=this.allarea[8].num;
             this.allarea[9].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==9&&end==8){
-          if(add==false){
+        if(start===9&&end===8){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[8].num=this.allarea[9].num;
             this.allarea[8].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==8&&end==10){
-          if(add==false){
+        if(start===8&&end===10){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[10].num=this.allarea[8].num;
             this.allarea[10].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==10&&end==8){
-          if(add==false){
+        if(start===10&&end===8){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[8].num=this.allarea[10].num;
             this.allarea[8].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==8&&end==11){
-          if(add==false){
+        if(start===8&&end===11){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[11].num=this.allarea[8].num;
             this.allarea[11].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==11&&end==8){
-          if(add==false){
+        if(start===11&&end===8){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[8].num=this.allarea[11].num;
             this.allarea[8].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
-        if(start==9&&end==10){
-          if(add==false){
+        if(start===9&&end===10){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[10].num=this.allarea[9].num;
             this.allarea[10].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==10&&end==9){
-          if(add==false){
+        if(start===10&&end===9){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[9].num=this.allarea[10].num;
             this.allarea[9].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==9&&end==11){
-          if(add==false){
+        if(start===9&&end===11){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[11].num=this.allarea[9].num;
             this.allarea[11].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==11&&end==9){
-          if(add==false){
+        if(start===11&&end===9){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[9].num=this.allarea[11].num;
             this.allarea[9].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
-        if(start==10&&end==11){
-          if(add==false){
+        if(start===10&&end===11){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[11].num=this.allarea[10].num;
             this.allarea[11].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==11&&end==10){
-          if(add==false){
+        if(start===11&&end===10){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[10].num=this.allarea[11].num;
             this.allarea[10].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
 
-        if(start==12&&end==13){
-          if(add==false){
+        if(start===12&&end===13){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[13].num=this.allarea[12].num;
             this.allarea[13].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
-        if(start==13&&end==12){
-          if(add==false){
+        if(start===13&&end===12){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[12].num=this.allarea[13].num;
             this.allarea[12].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
-        if(start==12&&end==14){
-          if(add==false){
+        if(start===12&&end===14){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[14].num=this.allarea[12].num;
             this.allarea[14].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
-        if(start==14&&end==12){
-          if(add==false){
+        if(start===14&&end===12){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[12].num=this.allarea[14].num;
             this.allarea[12].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
-        if(start==12&&end==15){
-          if(add==false){
+        if(start===12&&end===15){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[15].num=this.allarea[12].num;
             this.allarea[15].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
-        if(start==15&&end==12){
-          if(add==false){
+        if(start===15&&end===12){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[12].num=this.allarea[15].num;
             this.allarea[12].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
-        if(start==13&&end==14){
-          if(add==false){
+        if(start===13&&end===14){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[14].num=this.allarea[13].num;
             this.allarea[14].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
-        if(start==14&&end==13){
-          if(add==false){
+        if(start===14&&end===13){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[13].num=this.allarea[14].num;
             this.allarea[13].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
-        if(start==13&&end==15){
-          if(add==false){
+        if(start===13&&end===15){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[15].num=this.allarea[13].num;
             this.allarea[15].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
-        if(start==15&&end==13){
-          if(add==false){
+        if(start===15&&end===13){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[13].num=this.allarea[15].num;
             this.allarea[13].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
-        if(start==14&&end==15){
-          if(add==false){
+        if(start===14&&end===15){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[15].num=this.allarea[14].num;
             this.allarea[15].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
-        if(start==15&&end==14){
-          if(add==false){
+        if(start===15&&end===14){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[14].num=this.allarea[15].num;
             this.allarea[14].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
 
-        if(start==0&&end==4){
-          if(add==false){
+        if(start===0&&end===4){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[4].num=this.allarea[0].num;
             this.allarea[4].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==4&&end==0){
-          if(add==false){
+        if(start===4&&end===0){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[0].num=this.allarea[4].num;
             this.allarea[0].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==0&&end==8){
-          if(add==false){
+        if(start===0&&end===8){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[8].num=this.allarea[0].num;
             this.allarea[8].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==8&&end==0){
-          if(add==false){
+        if(start===8&&end===0){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[0].num=this.allarea[8].num;
             this.allarea[0].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==0&&end==12){
-          if(add==false){
+        if(start===0&&end===12){
+          if(add===false){
             this.allarea[0].has=false;
             this.allarea[12].num=this.allarea[0].num;
             this.allarea[12].has=true;
             this.allarea[0].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[0].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[0].num;
             this.allarea[0].num=2;
           }
         };
-        if(start==12&&end==0){
-          if(add==false){
+        if(start===12&&end===0){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[0].num=this.allarea[12].num;
             this.allarea[0].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[0].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[0].num*=2;
+            this.allarea[0].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
-        if(start==4&&end==8){
-          if(add==false){
+        if(start===4&&end===8){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[8].num=this.allarea[4].num;
             this.allarea[8].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==8&&end==4){
-          if(add==false){
+        if(start===8&&end===4){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[4].num=this.allarea[8].num;
             this.allarea[4].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==4&&end==12){
-          if(add==false){
+        if(start===4&&end===12){
+          if(add===false){
             this.allarea[4].has=false;
             this.allarea[12].num=this.allarea[4].num;
             this.allarea[12].has=true;
             this.allarea[4].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[4].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[4].num;
             this.allarea[4].num=2;
           }
         };
-        if(start==12&&end==4){
-          if(add==false){
+        if(start===12&&end===4){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[4].num=this.allarea[12].num;
             this.allarea[4].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[4].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[4].num*=2;
+            this.allarea[4].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
-        if(start==8&&end==12){
-          if(add==false){
+        if(start===8&&end===12){
+          if(add===false){
             this.allarea[8].has=false;
             this.allarea[12].num=this.allarea[8].num;
             this.allarea[12].has=true;
             this.allarea[8].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[8].has=false;
             this.score+=this.allarea[12].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[12].num*=2;
+            this.allarea[12].num+=this.allarea[8].num;
             this.allarea[8].num=2;
           }
         };
-        if(start==12&&end==8){
-          if(add==false){
+        if(start===12&&end===8){
+          if(add===false){
             this.allarea[12].has=false;
             this.allarea[8].num=this.allarea[12].num;
             this.allarea[8].has=true;
             this.allarea[12].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[12].has=false;
             this.score+=this.allarea[8].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[8].num*=2;
+            this.allarea[8].num+=this.allarea[12].num;
             this.allarea[12].num=2;
           }
         };
 
-        if(start==1&&end==5){
-          if(add==false){
+        if(start===1&&end===5){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[5].num=this.allarea[1].num;
             this.allarea[5].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==5&&end==1){
-          if(add==false){
+        if(start===5&&end===1){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[1].num=this.allarea[5].num;
             this.allarea[1].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==1&&end==9){
-          if(add==false){
+        if(start===1&&end===9){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[9].num=this.allarea[1].num;
             this.allarea[9].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==9&&end==1){
-          if(add==false){
+        if(start===9&&end===1){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[1].num=this.allarea[9].num;
             this.allarea[1].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==1&&end==13){
-          if(add==false){
+        if(start===1&&end===13){
+          if(add===false){
             this.allarea[1].has=false;
             this.allarea[13].num=this.allarea[1].num;
             this.allarea[13].has=true;
             this.allarea[1].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[1].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[1].num;
             this.allarea[1].num=2;
           }
         };
-        if(start==13&&end==1){
-          if(add==false){
+        if(start===13&&end===1){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[1].num=this.allarea[13].num;
             this.allarea[1].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[1].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[1].num*=2;
+            this.allarea[1].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
-        if(start==5&&end==9){
-          if(add==false){
+        if(start===5&&end===9){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[9].num=this.allarea[5].num;
             this.allarea[9].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==9&&end==5){
-          if(add==false){
+        if(start===9&&end===5){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[5].num=this.allarea[9].num;
             this.allarea[5].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==5&&end==13){
-          if(add==false){
+        if(start===5&&end===13){
+          if(add===false){
             this.allarea[5].has=false;
             this.allarea[13].num=this.allarea[5].num;
             this.allarea[13].has=true;
             this.allarea[5].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[5].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[5].num;
             this.allarea[5].num=2;
           }
         };
-        if(start==13&&end==5){
-          if(add==false){
+        if(start===13&&end===5){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[5].num=this.allarea[13].num;
             this.allarea[5].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[5].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[5].num*=2;
+            this.allarea[5].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
-        if(start==9&&end==13){
-          if(add==false){
+        if(start===9&&end===13){
+          if(add===false){
             this.allarea[9].has=false;
             this.allarea[13].num=this.allarea[9].num;
             this.allarea[13].has=true;
             this.allarea[9].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[9].has=false;
             this.score+=this.allarea[13].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[13].num*=2;
+            this.allarea[13].num+=this.allarea[9].num;
             this.allarea[9].num=2;
           }
         };
-        if(start==13&&end==9){
-          if(add==false){
+        if(start===13&&end===9){
+          if(add===false){
             this.allarea[13].has=false;
             this.allarea[9].num=this.allarea[13].num;
             this.allarea[9].has=true;
             this.allarea[13].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[13].has=false;
             this.score+=this.allarea[9].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[9].num*=2;
+            this.allarea[9].num+=this.allarea[13].num;
             this.allarea[13].num=2;
           }
         };
 
-        if(start==2&&end==6){
-          if(add==false){
+        if(start===2&&end===6){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[6].num=this.allarea[2].num;
             this.allarea[6].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==6&&end==2){
-          if(add==false){
+        if(start===6&&end===2){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[2].num=this.allarea[6].num;
             this.allarea[2].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[2].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==2&&end==10){
-          if(add==false){
+        if(start===2&&end===10){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[10].num=this.allarea[2].num;
             this.allarea[10].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==10&&end==2){
-          if(add==false){
+        if(start===10&&end===2){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[2].num=this.allarea[10].num;
             this.allarea[2].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[2].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==2&&end==14){
-          if(add==false){
+        if(start===2&&end===14){
+          if(add===false){
             this.allarea[2].has=false;
             this.allarea[14].num=this.allarea[2].num;
             this.allarea[14].has=true;
             this.allarea[2].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[2].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[2].num;
             this.allarea[2].num=2;
           }
         };
-        if(start==14&&end==2){
-          if(add==false){
+        if(start===14&&end===2){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[2].num=this.allarea[14].num;
             this.allarea[2].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[2].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[2].num*=2;
+            this.allarea[2].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
-        if(start==6&&end==10){
-          if(add==false){
+        if(start===6&&end===10){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[10].num=this.allarea[6].num;
             this.allarea[10].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==10&&end==6){
-          if(add==false){
+        if(start===10&&end===6){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[6].num=this.allarea[10].num;
             this.allarea[6].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==6&&end==14){
-          if(add==false){
+        if(start===6&&end===14){
+          if(add===false){
             this.allarea[6].has=false;
             this.allarea[14].num=this.allarea[6].num;
             this.allarea[14].has=true;
             this.allarea[6].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[6].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[6].num;
             this.allarea[6].num=2;
           }
         };
-        if(start==14&&end==6){
-          if(add==false){
+        if(start===14&&end===6){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[6].num=this.allarea[14].num;
             this.allarea[6].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[6].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[6].num*=2;
+            this.allarea[6].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
-        if(start==10&&end==14){
-          if(add==false){
+        if(start===10&&end===14){
+          if(add===false){
             this.allarea[10].has=false;
             this.allarea[14].num=this.allarea[10].num;
             this.allarea[14].has=true;
             this.allarea[10].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[10].has=false;
             this.score+=this.allarea[14].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[14].num*=2;
+            this.allarea[14].num+=this.allarea[10].num;
             this.allarea[10].num=2;
           }
         };
-        if(start==14&&end==10){
-          if(add==false){
+        if(start===14&&end===10){
+          if(add===false){
             this.allarea[14].has=false;
             this.allarea[10].num=this.allarea[14].num;
             this.allarea[10].has=true;
             this.allarea[14].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[14].has=false;
             this.score+=this.allarea[10].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[10].num*=2;
+            this.allarea[10].num+=this.allarea[14].num;
             this.allarea[14].num=2;
           }
         };
 
-        if(start==3&&end==7){
-          if(add==false){
+        if(start===3&&end===7){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[7].num=this.allarea[3].num;
             this.allarea[7].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
-        if(start==7&&end==3){
-          if(add==false){
+        if(start===7&&end===3){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[3].num=this.allarea[7].num;
             this.allarea[3].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
-        if(start==3&&end==11){
-          if(add==false){
+        if(start===3&&end===11){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[11].num=this.allarea[3].num;
             this.allarea[11].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
-        if(start==11&&end==3){
-          if(add==false){
+        if(start===11&&end===3){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[3].num=this.allarea[11].num;
             this.allarea[3].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
-        if(start==3&&end==15){
-          if(add==false){
+        if(start===3&&end===15){
+          if(add===false){
             this.allarea[3].has=false;
             this.allarea[15].num=this.allarea[3].num;
             this.allarea[15].has=true;
             this.allarea[3].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[3].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[3].num;
             this.allarea[3].num=2;
           }
         };
-        if(start==15&&end==3){
-          if(add==false){
+        if(start===15&&end===3){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[3].num=this.allarea[15].num;
             this.allarea[3].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[3].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[3].num*=2;
+            this.allarea[3].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
-        if(start==7&&end==11){
-          if(add==false){
+        if(start===7&&end===11){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[11].num=this.allarea[7].num;
             this.allarea[11].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
-        if(start==11&&end==7){
-          if(add==false){
+        if(start===11&&end===7){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[7].num=this.allarea[11].num;
             this.allarea[7].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
-        if(start==7&&end==15){
-          if(add==false){
+        if(start===7&&end===15){
+          if(add===false){
             this.allarea[7].has=false;
             this.allarea[15].num=this.allarea[7].num;
             this.allarea[15].has=true;
             this.allarea[7].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[7].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[7].num;
             this.allarea[7].num=2;
           }
         };
-        if(start==15&&end==7){
-          if(add==false){
+        if(start===15&&end===7){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[7].num=this.allarea[15].num;
             this.allarea[7].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[7].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[7].num*=2;
+            this.allarea[7].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
-        if(start==11&&end==15){
-          if(add==false){
+        if(start===11&&end===15){
+          if(add===false){
             this.allarea[11].has=false;
             this.allarea[15].num=this.allarea[11].num;
             this.allarea[15].has=true;
             this.allarea[11].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[11].has=false;
             this.score+=this.allarea[15].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[15].num*=2;
+            this.allarea[15].num+=this.allarea[11].num;
             this.allarea[11].num=2;
           }
         };
-        if(start==15&&end==11){
-          if(add==false){
+        if(start===15&&end===11){
+          if(add===false){
             this.allarea[15].has=false;
             this.allarea[11].num=this.allarea[15].num;
             this.allarea[11].has=true;
             this.allarea[15].num=2;
-          }else if(add==true){
+          }else if(add===true){
             this.allarea[15].has=false;
             this.score+=this.allarea[11].num;
             if(this.best<this.score){
               this.best=this.score;
             };
-            this.allarea[11].num*=2;
+            this.allarea[11].num+=this.allarea[15].num;
             this.allarea[15].num=2;
           }
         };
@@ -3775,5 +3804,13 @@
   }
   .v-enter{
     transform: scale(0.1, 0.1);
+  }
+  .fgf{
+    position: absolute;
+    right: 10.8125rem;
+    margin-top: 1.1875rem;
+    color: #09a8ec;
+    font-size: 1.875rem;
+    opacity: 0.4;
   }
 </style>
