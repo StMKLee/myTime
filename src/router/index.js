@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '../pages/index/index.vue'
 import ForError from '../pages/forError/forError.vue'
 import tzfe from '../pages/2048/2048.vue'
+import bcbke from '../pages/bcbke/bcbke.vue'
 
 Vue.use(Router)
 
@@ -20,6 +21,10 @@ export default new Router({
     {
       path: '/2048',
       component: tzfe
+    },
+    {
+      path:'/bcbke',
+      component: bcbke
     }
   ]
 })

@@ -3,27 +3,27 @@
     <div class="mNin">
       <div class="navtxt" id="navitem" @mouseenter="gamexialashow">GAME</div>
       <div class="xiala" :style="{top:gxialaHeight+'px', left:gxialawidth+'px'}" v-show="gameshow" @mouseleave="gamexialahide">
-        <transition name="xldh">
+        <transition-group name="xldh">
           <div class="xialaitem" v-show="gxialaitemshow" v-for="(item,index) in gitems" :key="index" @click="ggotoroute(index)">
             {{item.txt}}
           </div>
-        </transition>
+        </transition-group>
       </div>
       <div class="navtxt" @mouseenter="pxialashow">PRACTICAL</div>
       <div class="xiala" :style="{top:pxialaHeight+'px', left:pxialawidth+'px'}" v-show="pshow" @mouseleave="pxialahide">
-        <transition name="xldh">
+        <transition-group name="xldh">
           <div class="xialaitem" v-show="pxialaitemshow" v-for="(item,index) in pitems" :key="index" @click="pgotoroute(index)">
             {{item.txt}}
           </div>
-        </transition>
+        </transition-group>
       </div>
       <div class="navtxt" @mouseenter="funxialashow">FUN</div>
       <div class="xiala" :style="{top:fxialaHeight+'px', left:fxialawidth+'px'}" v-show="funshow" @mouseleave="funxialahide">
-        <transition name="xldh">
+        <transition-group name="xldh">
           <div class="xialaitem" v-show="fxialaitemshow" v-for="(item,index) in fitems" :key="index" @click="fgotoroute(index)">
             {{item.txt}}
           </div>
-        </transition>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -49,6 +49,10 @@
           {
             txt:'2048',
             routeto:'/2048'
+          },
+          {
+            txt:'别踩白块儿',
+            routeto:'/bcbke'
           }
         ],
         pitems:[
@@ -115,10 +119,10 @@
         this.$router.push(this.gitems[e].routeto);
       },
       pgotoroute:function(e){
-        
+
       },
       fgotoroute:function(e){
-        
+
       }
     },
     computed:{
@@ -170,11 +174,16 @@
     background-image: linear-gradient(to bottom, #2f2f3b, #b4b4de, #2f2f3b);
     padding-top: 1.25rem;
     border-radius: 0 0 50% 50%;
+    height: auto;
+    padding-bottom: 1.875rem;
+    z-index: 30;
   }
   .xialaitem{
     color: #313586;
     padding-bottom: 1.25rem;
     cursor: pointer;
+    text-align: center;
+    z-index: 31;
   }
   .xldh-enter-active, .xldh-leave-active{
     transition: all .5s ease;
