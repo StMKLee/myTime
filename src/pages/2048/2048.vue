@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="outcont">
-          <div class="incont" @mousedown.prevent="sidestart" @mouseup.prevent="sideend">
+          <div class="incont" @mousedown.prevent="sidestart" @mouseup.prevent="sideend" @touchstart="sidestart" @touchend="sideend">
             <div class="gocont" v-show="gameover">
               <div class="gotxt">GAME OVER</div>
               <div class="retxt" @click="newGame">new game</div>
@@ -188,10 +188,14 @@
     },
     methods:{
       sidestart:function(e){
+        this.sX=0;
+        this.sY=0;
         this.sX=e.clientX;
         this.sY=e.clientY;
       },
       sideend:function(e){
+        this.walkX=0;
+        this.walkY=0;
         this.walkX=e.clientX-this.sX;
         this.walkY=e.clientY-this.sY;
         if(Math.abs(this.walkX)>Math.abs(this.walkY)){
