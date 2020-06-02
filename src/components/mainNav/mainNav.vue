@@ -4,7 +4,7 @@
       <div class="navtxt" id="navitem" @mouseenter="gamexialashow">GAME</div>
       <div class="xiala" :style="{top:gxialaHeight+'px', left:gxialawidth+'px'}" v-show="gameshow" @mouseleave="gamexialahide">
         <transition-group name="xldh">
-          <div class="xialaitem" v-show="gxialaitemshow" v-for="(item,index) in gitems" :key="index" @click="ggotoroute(index)">
+          <div class="xialaitem" v-show="gxialaitemshow" v-for="(item,index) in gitems" :key="item.id" @click="ggotoroute(index)">
             {{item.txt}}
           </div>
         </transition-group>
@@ -12,7 +12,7 @@
       <div class="navtxt" @mouseenter="pxialashow">PRACTICAL</div>
       <div class="xiala" :style="{top:pxialaHeight+'px', left:pxialawidth+'px'}" v-show="pshow" @mouseleave="pxialahide">
         <transition-group name="xldh">
-          <div class="xialaitem" v-show="pxialaitemshow" v-for="(item,index) in pitems" :key="index" @click="pgotoroute(index)">
+          <div class="xialaitem" v-show="pxialaitemshow" v-for="(item,index) in pitems" :key="item.id" @click="pgotoroute(index)">
             {{item.txt}}
           </div>
         </transition-group>
@@ -20,7 +20,7 @@
       <div class="navtxt" @mouseenter="funxialashow">FUN</div>
       <div class="xiala" :style="{top:fxialaHeight+'px', left:fxialawidth+'px'}" v-show="funshow" @mouseleave="funxialahide">
         <transition-group name="xldh">
-          <div class="xialaitem" v-show="fxialaitemshow" v-for="(item,index) in fitems" :key="index" @click="fgotoroute(index)">
+          <div class="xialaitem" v-show="fxialaitemshow" v-for="(item,index) in fitems" :key="item.id" @click="fgotoroute(index)">
             {{item.txt}}
           </div>
         </transition-group>
@@ -47,22 +47,26 @@
         fxialaitemshow:false,
         gitems:[
           {
+            id:0,
             txt:'2048',
             routeto:'/2048'
           },
           {
+            id:1,
             txt:'别踩白块儿',
             routeto:'/bcbke'
           }
         ],
         pitems:[
           {
+            id:0,
             txt:'#p',
             routeto:'#'
           }
         ],
         fitems:[
           {
+            id:0,
             txt:'#f',
             routeto:'#'
           }
@@ -71,8 +75,8 @@
     },
     methods:{
       funxialashow:function(e){
-        this.fxialawidth=e.clientX-e.offsetX-10;
-        this.fxialaHeight=e.clientY-e.offsetY-10;
+        this.fxialawidth=e.pageX-e.offsetX-10;
+        this.fxialaHeight=e.pageY-e.offsetY-10;
         this.funshow=true;
         var that=this;
         setTimeout(function(){
@@ -86,8 +90,8 @@
         }
       },
       gamexialashow:function(e){
-        this.gxialawidth=e.clientX-e.offsetX-10;
-        this.gxialaHeight=e.clientY-e.offsetY-10;
+        this.gxialawidth=e.pageX-e.offsetX-10;
+        this.gxialaHeight=e.pageY-e.offsetY-10;
         this.gameshow=true;
         var that=this;
         setTimeout(function(){
@@ -101,8 +105,8 @@
         }
       },
       pxialashow:function(e){
-        this.pxialawidth=e.clientX-e.offsetX-10;
-        this.pxialaHeight=e.clientY-e.offsetY-10;
+        this.pxialawidth=e.pageX-e.offsetX-10;
+        this.pxialaHeight=e.pageY-e.offsetY-10;
         this.pshow=true;
         var that=this;
         setTimeout(function(){
