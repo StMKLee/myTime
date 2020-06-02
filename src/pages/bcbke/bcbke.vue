@@ -28,7 +28,7 @@
           </div>
           <div class="whitearea" v-for="(itm, idx) in 3" :key="idx" @click="gameovershow">
           </div>
-          <div class="blackkuai" v-for="(item,index) in fangkuais" :key="index" :style="{backgroundColor:item.bgcolor, top:item.top+'px', left:item.left+'px'}" @click="getit(index)">
+          <div class="blackkuai" v-for="(item,index) in fangkuais" :key="index" :style="{backgroundColor:item.bgcolor, top:item.top+'px', left:item.left+'px'}" @mouseup.prevent="getit(index)">
           </div>
         </div>
       </div>
@@ -49,8 +49,9 @@
         gameover:false,
         gametime:0,
         gsshow:true,
-        sulv:5,
+        sulv:1,
         jishiInterval:null,
+        yundongInterval:null,
         fangkuais:[
           {
             bgcolor:'#000000',
@@ -85,6 +86,7 @@
         this.gameover=true;
         var that=this;
         clearInterval(that.jishiInterval);
+        clearInterval(that.yundongInterval);
         that.gametime=0;
       },
       newGame:function(){
@@ -92,15 +94,25 @@
         this.gameover=false;
         this.init();
         this.gsshow=true;
+        this.sulv=2;
       },
       jishi:function(){
         var that=this;
         that.jishiInterval=setInterval(function(){
           that.gametime+=1;
-        }, 1000);
+          if(that.gametime%500==0&&that.gametime!=0){
+            that.sulv+=0.1;
+          };
+        }, 10);
       },
       getit:function(e){
-        this.fangkuais[e].bgcolor='#148800';
+        if(this.fangkuais[e].bgcolor=='#000000'){
+          this.fangkuais[e].bgcolor='#148800';
+          this.score+=1;
+          if(this.best<this.score){
+            this.best=this.score;
+          };
+        }
       },
       init:function(){
         this.fangkuais[0].top=-125;
@@ -113,7 +125,7 @@
         for (var i=0;i<this.fangkuais.length;i++) {
           this.fangkuais[i].bgcolor='#000000';
           a=Math.random()*3;
-          Math.floor(a);
+          b=Math.floor(a);
           if(b===0){
             this.fangkuais[i].left=0;
           }else if(b===1){
@@ -126,6 +138,37 @@
       startgame:function(){
         this.gsshow=false;
         this.jishi();
+        var that=this;
+        that.yundongInterval=setInterval(function(){
+          for (let i=0;i<that.fangkuais.length;i++) {
+            if(that.fangkuais[i].top>=500){
+              if(that.fangkuais[i].bgcolor==='#000000'){
+                that.gameovershow();
+              }else{
+                that.fangkuais.shift();
+                let a;
+                let b;
+                let c;
+                a=Math.random()*3;
+                b=Math.floor(a);
+                if(b===0){
+                  c=0;
+                }else if(b===1){
+                  c=101;
+                }else if(b===2){
+                  c=201;
+                };
+                that.fangkuais.push({
+                  bgcolor:'#000000',
+                  top:-125,
+                  left:c
+                });
+              }
+            }else{
+              that.fangkuais[i].top+=that.sulv;
+            }
+          }
+        }, 10);
       }
     },
     components:{
