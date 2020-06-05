@@ -60,8 +60,8 @@
         pitems:[
           {
             id:0,
-            txt:'#p',
-            routeto:'#'
+            txt:'抽奖转盘',
+            routeto:'/cjzp'
           }
         ],
         fitems:[
@@ -123,10 +123,10 @@
         this.$router.push(this.gitems[e].routeto);
       },
       pgotoroute:function(e){
-
+        this.$router.push(this.pitems[e].routeto);
       },
       fgotoroute:function(e){
-
+        this.$router.push(this.fitems[e].routeto);
       }
     },
     computed:{
