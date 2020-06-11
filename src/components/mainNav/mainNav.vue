@@ -67,8 +67,8 @@
         fitems:[
           {
             id:0,
-            txt:'#f',
-            routeto:'#'
+            txt:'生长的植物',
+            routeto:'/szdzw'
           }
         ]
       }
