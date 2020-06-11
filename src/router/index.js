@@ -5,6 +5,7 @@ import ForError from '../pages/forError/forError.vue'
 import tzfe from '../pages/2048/2048.vue'
 import bcbke from '../pages/bcbke/bcbke.vue'
 import cjzp from '../pages/cjzp/cjzp.vue'
+import szdzw from '../pages/szdzw/szdzw.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
     {
       path:'/cjzp',
       component: cjzp
+    },
+    {
+      path:'/szdzw',
+      component: szdzw
     }
   ]
 })
