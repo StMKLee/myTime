@@ -3,7 +3,7 @@
     <page-head></page-head>
     <main-nav></main-nav>
     <main-cont>
-      <div>szdzw</div>
+      <div>生长的植物</div>
     </main-cont>
   </div>
 </template>
