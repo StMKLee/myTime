@@ -3,7 +3,7 @@
     <page-head></page-head>
     <main-nav></main-nav>
     <main-cont>
-      <div>生长的植物</div>
+      <div>生长的植物(未完成)</div>
     </main-cont>
   </div>
 </template>
