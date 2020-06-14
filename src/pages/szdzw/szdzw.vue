@@ -280,6 +280,74 @@
             <div class="z1d13"></div>
           </div>
         </div>
+        <div class="zhen" v-show="show4">
+          <div class="z4d1"></div>
+          <div class="z4d2"></div>
+          <div class="z4d3"></div>
+          <div class="z4d4"></div>
+          <div class="z4d5"></div>
+          <div class="z4d6"></div>
+          <div class="z4d7"></div>
+          <div class="z4d8"></div>
+          <div class="z4d9"></div>
+          <div class="z4d10"></div>
+          <div class="z4d11"></div>
+          <div class="z4d12"></div>
+          <div class="z4d13">
+            <div class="z4d14"></div>
+          </div>
+          <div class="z4d15">
+            <div class="z4d16"></div>
+          </div>
+          <div class="z4d17">
+            <div class="z4d18"></div>
+          </div>
+          <div class="z4d19">
+            <div class="z4d20"></div>
+          </div>
+          <div class="z4d21"></div>
+          <div class="z4d22">
+            <div class="z4d23"></div>
+          </div>
+          <div class="z4d24">
+            <div class="z4d25"></div>
+          </div>
+          <div class="z4d26">
+            <div class="z4d27"></div>
+          </div>
+          <div class="z4d28"></div>
+          <div class="z4d29"></div>
+          <div class="z4d30">
+            <div class="z4d31"></div>
+          </div>
+          <div class="z4d32">
+            <div class="z4d33"></div>
+          </div>
+          <div class="z4d34">
+            <div class="z4d35"></div>
+          </div>
+          <div class="z4d36"></div>
+          <div class="z4d37">
+            <div class="z4d38"></div>
+          </div>
+          <div class="z4d39">
+            <div class="z4d40"></div>
+          </div>
+          <div class="z4d41"></div>
+          <div class="z4d42">
+            <div class="z4d43"></div>
+          </div>
+          <div class="z4d44"></div>
+          <div class="z4d45">
+            <div class="z4d46"></div>
+          </div>
+          <div class="z4d47">
+            <div class="z4d48"></div>
+          </div>
+          <div class="z4d49">
+            <div class="z4d50"></div>
+          </div>
+        </div>
       </div>
     </main-cont>
   </div>
@@ -295,7 +363,8 @@
       return{
         show1:false,
         show2:false,
-        show3:true
+        show3:false,
+        show4:true
       }
     },
     methods:{
@@ -334,6 +403,7 @@
     height: 25rem;
     background-color: #000000;
     overflow: hidden;
+    z-index: 0;
   }
   .zhen{
     width: 100%;
@@ -889,5 +959,454 @@
     top: 12.5%;
     left: 52.5%;
     transform: rotate(60deg);
+  }
+  .z4d1{
+    bottom: 0;
+    width: 14%;
+    height: 3.75rem;
+    left: 43%;
+    background-color: #367000;
+    position: absolute;
+  }
+  .z4d2{
+    bottom: 0;
+    width: 45.5%;
+    height: 3.75rem;
+    left: 0;
+    background-color: #000000;
+    position: absolute;
+    border-radius: 0 0 1.875rem 0;
+  }
+  .z4d3{
+    bottom: 0;
+    width: 45.5%;
+    height: 3.75rem;
+    right: 0;
+    background-color: #000000;
+    position: absolute;
+    border-radius: 0 0 0 1.875rem;
+  }
+  .z4d4{
+    bottom: 3.75rem;
+    width: 9%;
+    height: 6.25rem;
+    left: 45.5%;
+    background-color: #367000;
+    position: absolute;
+  }
+  .z4d5{
+    bottom: 10rem;
+    width: 7%;
+    height: 3.125rem;
+    left: 45.5%;
+    background-color: #367000;
+    position: absolute;
+  }
+  .z4d6{
+    bottom: 13.125rem;
+    width: 5%;
+    height: 3.125rem;
+    left: 47.5%;
+    background-color: #367000;
+    position: absolute;
+  }
+  .z4d7{
+    bottom: 15.625rem;
+    width: 3%;
+    height: 3.125rem;
+    left: 48.5%;
+    background-color: #367000;
+    position: absolute;
+  }
+  .z4d8{
+    bottom: 18.75rem;
+    position: absolute;
+    width: 51.5%;
+    height: 2.5rem;
+    background-color: #367000;
+    border-radius: 0 1.875rem 0 0;
+  }
+  .z4d9{
+    bottom: 18.75rem;
+    position: absolute;
+    width: 48.5%;
+    height: 2.5rem;
+    background-color: #000000;
+    border-radius: 0 1.75rem 0 0;
+  }
+  .z4d10{
+    bottom: 18.75rem;
+    right: 0;
+    position: absolute;
+    width: 50%;
+    height: 1.875rem;
+    background-color: #367000;
+    border-radius: 1.875rem 0 0 0;
+  }
+  .z4d11{
+    bottom: 18.75rem;
+    right: 0;
+    position: absolute;
+    width: 48.5%;
+    height: 1.875rem;
+    background-color: #000000;
+    border-radius: 1.75rem 0 0 0;
+  }
+  .z4d12{
+    top: 55%;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    left: 51.8%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 1.25rem;
+    transform: rotate(90deg);
+  }
+  .z4d13{
+    top: 51.3%;
+    width: 3.75rem;
+    height: 4.375rem;
+    left: 54.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 100% 0;
+    transform: rotate(0deg);
+  }
+  .z4d14{
+    width: 1.25rem;
+    height: 0.9375rem;
+    background-color: #000000;
+    border-radius: 0 0 100% 0;
+    position: absolute;
+  }
+  .z4d15{
+    top: 39%;
+    width: 3.75rem;
+    height: 3.4375rem;
+    left: 56.65%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 100% 0 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d16{
+    width: 1.25rem;
+    height: 1.875rem;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+  }
+  .z4d17{
+    top: 34%;
+    width: 2.5rem;
+    height: 2.8125rem;
+    left: 63.2%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 100% 0;
+    transform: rotate(0deg);
+  }
+  .z4d18{
+    width: 1.5625rem;
+    height: 1.25rem;
+    background-color: #000000;
+    border-radius: 0 0 100% 0;
+    position: absolute;
+  }
+  .z4d19{
+    top: 27.8%;
+    width: 1.875rem;
+    height: 1.5625rem;
+    left: 65.9%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 100% 0 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d20{
+    width: 0.9375rem;
+    height: 1.5625rem;
+    background-color: #000000;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .z4d21{
+    top: 45%;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    left: 45.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d22{
+    top: 41.3%;
+    width: 3.125rem;
+    height: 3.75rem;
+    left: 40.1%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d23{
+    width: 1.25rem;
+    height: 0.9375rem;
+    right: 0;
+    background-color: #000000;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+  }
+  .z4d24{
+    top: 32%;
+    width: 3.125rem;
+    height: 2.5rem;
+    left: 37.9%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d25{
+    width: 1.25rem;
+    height: 1.25rem;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 0 100% 0 0;
+    position: absolute;
+  }
+  .z4d26{
+    top: 27%;
+    width: 1.875rem;
+    height: 2.5rem;
+    left: 35%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d27{
+    width: 1.875rem;
+    height: 1.25rem;
+    right: 0;
+    background-color: #000000;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+  }
+  .z4d28{
+    top: 49%;
+    width: 2.5rem;
+    height: 1.25rem;
+    left: 38.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d29{
+    top: 44%;
+    width: 1.5rem;
+    height: 1.25rem;
+    left: 38.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d30{
+    top: 41.5%;
+    width: 3.75rem;
+    height: 2.1875rem;
+    left: 32.1%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d31{
+    width: 2.5rem;
+    height: 0.625rem;
+    right: 0;
+    background-color: #000000;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+  }
+  .z4d32{
+    top: 34%;
+    width: 3.75rem;
+    height: 1.875rem;
+    left: 27.7%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d33{
+    width: 2.5rem;
+    height: 1.25rem;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 0 100% 0 0;
+    position: absolute;
+  }
+  .z4d34{
+    top: 29%;
+    width: 1.875rem;
+    height: 1.875rem;
+    left: 24.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d35{
+    width: 1.875rem;
+    height: 1.25rem;
+    right: 0;
+    background-color: #000000;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+  }
+  .z4d36{
+    top: 30%;
+    width: 0.625rem;
+    height: 1.25rem;
+    left: 47.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d37{
+    top: 26%;
+    width: 2.1875rem;
+    height: 1.875rem;
+    left: 43.8%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    transform: rotate(0deg);
+  }
+  .z4d38{
+    width: 1.5625rem;
+    height: 1rem;
+    right: 0;
+    background-color: #000000;
+    border-radius: 0 0 0 100%;
+    position: absolute;
+  }
+  .z4d39{
+    top: 21%;
+    width: 2.5rem;
+    height: 1.25rem;
+    left: 40.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 100% 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d40{
+    width: 1.875rem;
+    height: 1.25rem;
+    bottom: 0;
+    background-color: #000000;
+    border-radius: 0 100% 0 0;
+    position: absolute;
+  }
+  .z4d41{
+    top: 28.8%;
+    width: 0.9375rem;
+    height: 1.875rem;
+    left: 50.9%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 100% 0 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d42{
+    top: 25%;
+    width: 3.125rem;
+    height: 2.5rem;
+    left: 52.5%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 100% 0;
+    transform: rotate(0deg);
+  }
+  .z4d43{
+    width: 2.1875rem;
+    height: 0.9375rem;
+    background-color: #000000;
+    border-radius: 0 0 100% 0;
+    position: absolute;
+  }
+  .z4d44{
+    top: 22%;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    left: 56.3%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 100% 0 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d45{
+    top: 19.6%;
+    width: 1.875rem;
+    height: 1.5625rem;
+    left: 57.9%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 100% 0;
+    transform: rotate(0deg);
+  }
+  .z4d46{
+    width: 1.875rem;
+    height: 0.625rem;
+    background-color: #000000;
+    border-radius: 0 0 100% 0;
+    position: absolute;
+  }
+  .z4d47{
+    top: 33%;
+    width: 3.75rem;
+    height: 2.5rem;
+    left: 65%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 0 0 100% 0;
+    transform: rotate(0deg);
+    z-index: -1;
+  }
+  .z4d48{
+    width: 3.125rem;
+    height: 1.5625rem;
+    background-color: #000000;
+    border-radius: 0 0 100% 0;
+    position: absolute;
+  }
+  .z4d49{
+    top: 25.6%;
+    width: 2.5rem;
+    height: 1.875rem;
+    left: 70.4%;
+    background-color: #367000;
+    position: absolute;
+    border-radius: 100% 0 0 0;
+    transform: rotate(0deg);
+  }
+  .z4d50{
+    width: 1.875rem;
+    height: 1.875rem;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    border-radius: 100% 0 0 0;
+    position: absolute;
   }
 </style>
